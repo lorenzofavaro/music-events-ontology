@@ -22,7 +22,9 @@
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#assisteA
-:assisteA rdf:type owl:ObjectProperty .
+:assisteA rdf:type owl:ObjectProperty ;
+          rdfs:domain :Persona ;
+          rdfs:range :Evento .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#certifica
@@ -52,6 +54,19 @@
           rdfs:range :Brano .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#distribuisce
+:distribuisce rdf:type owl:ObjectProperty ;
+              owl:inverseOf :distribuitoTramite ;
+              rdfs:domain :PiattaformaDistribuzione ;
+              rdfs:range :Brano .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#distribuitoTramite
+:distribuitoTramite rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Brano ;
+                    rdfs:range :PiattaformaDistribuzione .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#genereDelBrano
 :genereDelBrano rdf:type owl:ObjectProperty ;
                 owl:inverseOf :haGenere ;
@@ -78,6 +93,12 @@
 :haGenere rdf:type owl:ObjectProperty ;
           rdfs:domain :Brano ;
           rdfs:range :GenereMusicale .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#iscrittoA
+:iscrittoA rdf:type owl:ObjectProperty ;
+           rdfs:domain :Persona ;
+           rdfs:range :PiattaformaDistribuzione .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ospita
@@ -298,13 +319,9 @@
 :Cantante rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :suona ;
-                                owl:someValuesFrom [ owl:intersectionOf ( :StrumentoAFiato
-                                                                          [ rdf:type owl:Class ;
-                                                                            owl:oneOf ( :Microfono
-                                                                                      )
-                                                                          ]
-                                                                        ) ;
-                                                     rdf:type owl:Class
+                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                     owl:oneOf ( :Voce
+                                                               )
                                                    ]
                               ] ;
           rdfs:subClassOf :Musicista .
@@ -457,6 +474,17 @@
          rdfs:subClassOf :Luogo .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Negozio
+:Negozio rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:oneOf ( :EsseStore
+                                           :MediaWorld
+                                           :Wallmart
+                                         )
+                             ] ;
+         rdfs:subClassOf :PiattaformaAnalogica .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Persona
 :Persona rdf:type owl:Class .
 
@@ -468,6 +496,36 @@
                                             :Anziano
                                             :Giovane
                                           ) .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#PiattaformaAnalogica
+:PiattaformaAnalogica rdf:type owl:Class ;
+                      rdfs:subClassOf :PiattaformaDistribuzione .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#PiattaformaDigitale
+:PiattaformaDigitale rdf:type owl:Class ;
+                     rdfs:subClassOf :PiattaformaDistribuzione ;
+                     owl:disjointUnionOf ( :Radio
+                                           :Streaming
+                                           :Televisione
+                                         ) .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#PiattaformaDistribuzione
+:PiattaformaDistribuzione rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Radio
+:Radio rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:oneOf ( :DiscoRadio
+                                         :RDS
+                                         :RTL102.5
+                                         :RadioZeta
+                                       )
+                           ] ;
+       rdfs:subClassOf :PiattaformaDigitale .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Ruolo
@@ -484,8 +542,26 @@
             rdfs:subClassOf :Ruolo .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Streaming
+:Streaming rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:oneOf ( :AppleMusic
+                                             :SoundCloud
+                                             :Spotify
+                                             :Vevo
+                                             :Youtube
+                                           )
+                               ] ;
+           rdfs:subClassOf :PiattaformaDigitale .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Strumento
-:Strumento rdf:type owl:Class .
+:Strumento rdf:type owl:Class ;
+           owl:disjointUnionOf ( :StrumentoACorde
+                                 :StrumentoAFiato
+                                 :StrumentoAPercussione
+                                 :StrumentoATastiera
+                               ) .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#StrumentoACorde
@@ -544,6 +620,26 @@
              rdfs:subClassOf :Musicista .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Televisione
+:Televisione rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:oneOf ( :KissTV
+                                               :MTV
+                                               <http://www.semanticweb.org/lorenzo/ontologies/music#4Music>
+                                             )
+                                 ] ;
+             rdfs:subClassOf :PiattaformaDigitale .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Utente
+:Utente rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :iscrittoA ;
+                              owl:someValuesFrom :PiattaformaDistribuzione
+                            ] ;
+        rdfs:subClassOf :Ruolo .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -558,6 +654,10 @@
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AmericaDelSud
 :AmericaDelSud rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic
+:AppleMusic rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Arpa
@@ -582,7 +682,7 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan
 :BobDylan rdf:type owl:NamedIndividual ;
           :suona :ChitarraClassica ,
-                 :Microfono ;
+                 :Voce ;
           :età "81"^^xsd:unsignedInt .
 
 
@@ -615,6 +715,14 @@
                      :Strumento .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#DiscoRadio
+:DiscoRadio rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#EsseStore
+:EsseStore rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Europa
 :Europa rdf:type owl:NamedIndividual .
 
@@ -641,11 +749,23 @@
                :GenereMusicale .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#KissTV
+:KissTV rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#MTV
+:MTV rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Masters_of_War
 :Masters_of_War rdf:type owl:NamedIndividual ;
                 :compostoDa :BobDylan ;
                 :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> ;
                 :haGenere :Rock .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#MediaWorld
+:MediaWorld rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Microfono
@@ -677,6 +797,18 @@
               :GenereMusicale .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#RDS
+:RDS rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#RTL102.5
+:RTL102.5 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#RadioZeta
+:RadioZeta rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Rock
 :Rock rdf:type owl:NamedIndividual ,
                :GenereMusicale .
@@ -685,6 +817,14 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Sassofono
 :Sassofono rdf:type owl:NamedIndividual ,
                     :Strumento .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#SoundCloud
+:SoundCloud rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Spotify
+:Spotify rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Trombone
@@ -698,6 +838,10 @@
      :situatoIn :AmericaDelNord .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Vevo
+:Vevo rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violino
 :Violino rdf:type owl:NamedIndividual ,
                   :Strumento .
@@ -706,6 +850,26 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violoncello
 :Violoncello rdf:type owl:NamedIndividual ,
                       :Strumento .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Voce
+:Voce rdf:type owl:NamedIndividual ,
+               :Strumento ;
+      rdfs:comment "La voce umana come strumento musicale." ;
+      rdfs:label "Voce" ;
+      rdfs:seeAlso "https://www.wikidata.org/wiki/Q17172850" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Wallmart
+:Wallmart rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Youtube
+:Youtube rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#4Music
+<http://www.semanticweb.org/lorenzo/ontologies/music#4Music> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Blowin'_In_The_Wind
