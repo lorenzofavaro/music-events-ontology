@@ -94,19 +94,14 @@
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#situatoIn
-:situatoIn rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :situatoInLuogo ;
-           rdf:type owl:FunctionalProperty ,
-                    owl:AsymmetricProperty ;
-           rdfs:domain :Evento ;
+:situatoIn rdf:type owl:ObjectProperty ,
+                    owl:TransitiveProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Evento
+                                       :Luogo
+                                     )
+                       ] ;
            rdfs:range :Luogo .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/music#situatoInLuogo
-:situatoInLuogo rdf:type owl:ObjectProperty ,
-                         owl:TransitiveProperty ;
-                rdfs:domain owl:Thing ;
-                rdfs:range :Luogo .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#suona
@@ -385,18 +380,6 @@
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Evento
 :Evento rdf:type owl:Class ;
-        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :situatoIn ;
-                                                     owl:someValuesFrom :Luogo
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :ospita ;
-                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                     owl:onClass :Musicista
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
         owl:disjointUnionOf ( :Concerto
                               :Esibizione
                               :Festival
@@ -606,7 +589,7 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Boston
 :Boston rdf:type owl:NamedIndividual ,
                  :Città ;
-        :situatoInLuogo :USA .
+        :situatoIn :USA .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BostonGardens_74
@@ -712,7 +695,7 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#USA
 :USA rdf:type owl:NamedIndividual ,
               :Nazione ;
-     :situatoInLuogo :AmericaDelNord .
+     :situatoIn :AmericaDelNord .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violino
