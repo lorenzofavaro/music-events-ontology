@@ -12,6 +12,32 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#albumHaGenere
+:albumHaGenere rdf:type owl:ObjectProperty ;
+               rdfs:domain :Album ;
+               rdfs:range :GenereMusicale ;
+               owl:propertyChainAxiom ( :contiene
+                                        :haGenere
+                                      ) .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#assisteA
+:assisteA rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#certifica
+:certifica rdf:type owl:ObjectProperty ;
+           owl:inverseOf :èCertificato ;
+           rdfs:range :Album .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#compostoDa
+:compostoDa rdf:type owl:ObjectProperty ;
+            owl:inverseOf :haComposto ;
+            rdfs:domain :Brano ;
+            rdfs:range :Musicista .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#contenutoIn
 :contenutoIn rdf:type owl:ObjectProperty ;
              owl:inverseOf :contiene ;
@@ -33,38 +59,54 @@
                 rdfs:range :Brano .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#haAlbum
+:haAlbum rdf:type owl:ObjectProperty ;
+         rdfs:domain :Musicista ;
+         rdfs:range :Album ;
+         owl:propertyChainAxiom ( :haComposto
+                                  :contenutoIn
+                                ) .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#haComposto
+:haComposto rdf:type owl:ObjectProperty ;
+            rdfs:domain :Musicista ;
+            rdfs:range :Brano .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#haGenere
 :haGenere rdf:type owl:ObjectProperty ;
           rdfs:domain :Brano ;
           rdfs:range :GenereMusicale .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#haGenereDelBrano
-:haGenereDelBrano rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Album ;
-                  rdfs:range :GenereMusicale ;
-                  owl:propertyChainAxiom ( :genereDelBrano
-                                           :contenutoIn
-                                         ) .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#ospita
+:ospita rdf:type owl:ObjectProperty ;
+        owl:inverseOf :ospiteDi ;
+        rdfs:domain :Evento ;
+        rdfs:range :Musicista .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#haStrumento
-:haStrumento rdf:type owl:ObjectProperty ;
-             rdfs:domain :Brano ;
-             rdfs:range :Strumento .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#ospiteDi
+:ospiteDi rdf:type owl:ObjectProperty ;
+          rdfs:domain :Musicista ;
+          rdfs:range :Evento .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#scrittoDa
-:scrittoDa rdf:type owl:ObjectProperty ;
-           owl:inverseOf :scrive ;
-           rdfs:domain :Brano ;
-           rdfs:range :Musicista .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#situatoIn
+:situatoIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :situatoInLuogo ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ;
+           rdfs:domain :Evento ;
+           rdfs:range :Luogo .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#scrive
-:scrive rdf:type owl:ObjectProperty ;
-        rdfs:domain :Musicista ;
-        rdfs:range :Brano .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#situatoInLuogo
+:situatoInLuogo rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain owl:Thing ;
+                rdfs:range :Luogo .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#suona
@@ -80,16 +122,18 @@
            rdfs:range :Musicista .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#èDiGenerazione
-:èDiGenerazione rdf:type owl:ObjectProperty ,
-                         owl:FunctionalProperty ;
-                rdfs:domain :Musicista ;
-                rdfs:range :PersonaFascia .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#èCertificato
+:èCertificato rdf:type owl:ObjectProperty ;
+              rdfs:domain :Album .
 
 
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#dataEvento
+:dataEvento rdf:type owl:DatatypeProperty .
+
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#dataUscita
 :dataUscita rdf:type owl:DatatypeProperty ;
@@ -101,6 +145,18 @@
 :età rdf:type owl:DatatypeProperty ;
      rdfs:domain :Persona ;
      rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#numeroSpettatori
+:numeroSpettatori rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Evento ;
+                  rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite
+:numeroVendite rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Album ;
+               rdfs:range xsd:unsignedInt .
 
 
 #################################################################
@@ -120,7 +176,7 @@
                                                                         )
                                                  ]
                             ] ;
-        rdfs:subClassOf :PersonaFascia .
+        rdfs:subClassOf :PersonaDiGenerazione .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Album
@@ -135,6 +191,52 @@
        rdfs:seeAlso "https://www.wikidata.org/wiki/Q482994" .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumDiamante
+:AlbumDiamante rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :numeroVendite ;
+                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                          owl:onDatatype xsd:unsignedInt ;
+                                                          owl:withRestrictions ( [ xsd:minInclusive "1000000"^^xsd:unsignedInt
+                                                                                 ]
+                                                                               )
+                                                        ]
+                                   ] ;
+               rdfs:subClassOf :Album .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumOro
+:AlbumOro rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :numeroVendite ;
+                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                     owl:onDatatype xsd:unsignedInt ;
+                                                     owl:withRestrictions ( [ xsd:minExclusive "50000"^^xsd:unsignedInt
+                                                                            ]
+                                                                            [ xsd:maxExclusive "100000"^^xsd:unsignedInt
+                                                                            ]
+                                                                          )
+                                                   ]
+                              ] ;
+          rdfs:subClassOf :Album .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumPlatino
+:AlbumPlatino rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :numeroVendite ;
+                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                         owl:onDatatype xsd:unsignedInt ;
+                                                         owl:withRestrictions ( [ xsd:minExclusive "100000"^^xsd:unsignedInt
+                                                                                ]
+                                                                                [ xsd:maxExclusive "1000000"^^xsd:unsignedInt
+                                                                                ]
+                                                                              )
+                                                       ]
+                                  ] ;
+              rdfs:subClassOf :Album .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Anziano
 :Anziano rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Restriction ;
@@ -146,7 +248,7 @@
                                                                          )
                                                   ]
                              ] ;
-         rdfs:subClassOf :PersonaFascia .
+         rdfs:subClassOf :PersonaDiGenerazione .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Bassista
@@ -169,7 +271,14 @@
 :Batterista rdf:type owl:Class ;
             owl:equivalentClass [ rdf:type owl:Restriction ;
                                   owl:onProperty :suona ;
-                                  owl:someValuesFrom :StrumentoAPercussione
+                                  owl:someValuesFrom [ owl:intersectionOf ( :StrumentoAPercussione
+                                                                            [ rdf:type owl:Class ;
+                                                                              owl:oneOf ( :Batteria
+                                                                                        )
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ]
                                 ] ;
             rdfs:subClassOf :Musicista .
 
@@ -181,12 +290,7 @@
                                                     owl:someValuesFrom :GenereMusicale
                                                   ]
                                                   [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :haStrumento ;
-                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                    owl:onClass :Strumento
-                                                  ]
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :scrittoDa ;
+                                                    owl:onProperty :compostoDa ;
                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                     owl:onClass :Musicista
                                                   ]
@@ -228,29 +332,96 @@
              rdfs:subClassOf :Musicista .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Città
+:Città rdf:type owl:Class ;
+       rdfs:subClassOf :Luogo .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Concerto
+:Concerto rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :numeroSpettatori ;
+                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                     owl:onDatatype xsd:unsignedInt ;
+                                                     owl:withRestrictions ( [ xsd:minExclusive "500"^^xsd:unsignedInt
+                                                                            ]
+                                                                            [ xsd:maxInclusive "10000"^^xsd:unsignedInt
+                                                                            ]
+                                                                          )
+                                                   ]
+                              ] ;
+          rdfs:subClassOf :Evento .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Continente
+:Continente rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:oneOf ( :Africa
+                                              :AmericaDelNord
+                                              :AmericaDelSud
+                                              :Asia
+                                              :Europa
+                                              :Oceania
+                                            )
+                                ] ;
+            rdfs:subClassOf :Luogo .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Esibizione
+:Esibizione rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :numeroSpettatori ;
+                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                       owl:onDatatype xsd:unsignedInt ;
+                                                       owl:withRestrictions ( [ xsd:minInclusive "10"^^xsd:unsignedInt
+                                                                              ]
+                                                                              [ xsd:maxExclusive "500"^^xsd:unsignedInt
+                                                                              ]
+                                                                            )
+                                                     ]
+                                ] ;
+            rdfs:subClassOf :Evento .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Evento
-:Evento rdf:type owl:Class .
+:Evento rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :situatoIn ;
+                                                     owl:someValuesFrom :Luogo
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :ospita ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :Musicista
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        owl:disjointUnionOf ( :Concerto
+                              :Esibizione
+                              :Festival
+                            ) .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#EventoGrande
-:EventoGrande rdf:type owl:Class ;
-              rdfs:subClassOf :Evento .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/music#EventoMedio
-:EventoMedio rdf:type owl:Class ;
-             rdfs:subClassOf :Evento .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/music#EventoPiccolo
-:EventoPiccolo rdf:type owl:Class ;
-               rdfs:subClassOf :Evento .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Festival
+:Festival rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :numeroSpettatori ;
+                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                     owl:onDatatype xsd:unsignedInt ;
+                                                     owl:withRestrictions ( [ xsd:minExclusive "10000"^^xsd:unsignedInt
+                                                                            ]
+                                                                          )
+                                                   ]
+                              ] ;
+          rdfs:subClassOf :Evento .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#GenereMusicale
 :GenereMusicale rdf:type owl:Class ;
                 owl:equivalentClass [ rdf:type owl:Class ;
-                                      owl:oneOf ( :Jazz
+                                      owl:oneOf ( :Folk
+                                                  :Jazz
                                                   :Pop
                                                   :Rock
                                                 )
@@ -273,13 +444,17 @@
                                                                          )
                                                   ]
                              ] ;
-         rdfs:subClassOf :PersonaFascia .
+         rdfs:subClassOf :PersonaDiGenerazione .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Luogo
+:Luogo rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Musicista
 :Musicista rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :scrive ;
+                                                        owl:onProperty :haComposto ;
                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                         owl:onClass :Brano
                                                       ]
@@ -291,29 +466,39 @@
                                                     ) ;
                                  rdf:type owl:Class
                                ] ;
-           rdfs:subClassOf :Persona .
+           rdfs:subClassOf :Ruolo .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Nazione
+:Nazione rdf:type owl:Class ;
+         rdfs:subClassOf :Luogo .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Persona
 :Persona rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#PersonaFascia
-:PersonaFascia rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Restriction ;
-                                     owl:onProperty [ owl:inverseOf :èDiGenerazione
-                                                    ] ;
-                                     owl:someValuesFrom :Musicista
-                                   ] ;
-               rdfs:subClassOf :Persona ;
-               owl:disjointUnionOf ( :Adulto
-                                     :Anziano
-                                     :Giovane
-                                   ) .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#PersonaDiGenerazione
+:PersonaDiGenerazione rdf:type owl:Class ;
+                      rdfs:subClassOf :Persona ;
+                      owl:disjointUnionOf ( :Adulto
+                                            :Anziano
+                                            :Giovane
+                                          ) .
 
 
-###  http://www.semanticweb.org/lorenzo/ontologies/music#Premio
-:Premio rdf:type owl:Class .
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Ruolo
+:Ruolo rdf:type owl:Class ;
+       rdfs:subClassOf :Persona .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Spettatore
+:Spettatore rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :assisteA ;
+                                  owl:someValuesFrom :Evento
+                                ] ;
+            rdfs:subClassOf :Ruolo .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Strumento
@@ -323,9 +508,12 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#StrumentoACorde
 :StrumentoACorde rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Class ;
-                                       owl:oneOf ( :Basso
+                                       owl:oneOf ( :Arpa
+                                                   :Basso
                                                    :ChitarraClassica
                                                    :ChitarraElettrica
+                                                   :Violino
+                                                   :Violoncello
                                                  )
                                      ] ;
                  rdfs:subClassOf :Strumento .
@@ -377,9 +565,25 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Africa
+:Africa rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AmericaDelNord
+:AmericaDelNord rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#AmericaDelSud
+:AmericaDelSud rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Arpa
 :Arpa rdf:type owl:NamedIndividual ,
                :Strumento .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Asia
+:Asia rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Basso
@@ -399,6 +603,20 @@
           :età "81"^^xsd:unsignedInt .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Boston
+:Boston rdf:type owl:NamedIndividual ,
+                 :Città ;
+        :situatoInLuogo :USA .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#BostonGardens_74
+:BostonGardens_74 rdf:type owl:NamedIndividual ;
+                  :ospita :BobDylan ;
+                  :situatoIn :Boston ;
+                  :dataEvento "1974-01-14T00:00:00"^^xsd:dateTime ;
+                  :numeroSpettatori "8000"^^xsd:unsignedInt .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ChitarraClassica
 :ChitarraClassica rdf:type owl:NamedIndividual ,
                            :Strumento .
@@ -414,15 +632,25 @@
                      :Strumento .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Europa
+:Europa rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Flauto
 :Flauto rdf:type owl:NamedIndividual ,
                  :Strumento .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Folk
+:Folk rdf:type owl:NamedIndividual ,
+               :GenereMusicale .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Girl_from_the_North_Country
-:Girl_from_the_North_Country rdf:type owl:NamedIndividual ,
-                                      :Brano ;
-                             :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> .
+:Girl_from_the_North_Country rdf:type owl:NamedIndividual ;
+                             :compostoDa :BobDylan ;
+                             :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> ;
+                             :haGenere :Folk .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Jazz
@@ -431,14 +659,19 @@
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Masters_of_War
-:Masters_of_War rdf:type owl:NamedIndividual ,
-                         :Brano ;
-                :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> .
+:Masters_of_War rdf:type owl:NamedIndividual ;
+                :compostoDa :BobDylan ;
+                :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> ;
+                :haGenere :Rock .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Microfono
 :Microfono rdf:type owl:NamedIndividual ,
                     :Strumento .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Oceania
+:Oceania rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Organo
@@ -476,6 +709,12 @@
                    :Strumento .
 
 
+###  http://www.semanticweb.org/lorenzo/ontologies/music#USA
+:USA rdf:type owl:NamedIndividual ,
+              :Nazione ;
+     :situatoInLuogo :AmericaDelNord .
+
+
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violino
 :Violino rdf:type owl:NamedIndividual ,
                   :Strumento .
@@ -487,14 +726,15 @@
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Blowin'_In_The_Wind
-<http://www.semanticweb.org/lorenzo/ontologies/music#Blowin'_In_The_Wind> rdf:type owl:NamedIndividual ,
-                                                                                   :Brano ;
+<http://www.semanticweb.org/lorenzo/ontologies/music#Blowin'_In_The_Wind> rdf:type owl:NamedIndividual ;
+                                                                          :compostoDa :BobDylan ;
+                                                                          :contenutoIn <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> ;
                                                                           :haGenere :Rock .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan
 <http://www.semanticweb.org/lorenzo/ontologies/music#The_Freewheelin'_Bob_Dylan> rdf:type owl:NamedIndividual ;
-                                                                                 :contiene <http://www.semanticweb.org/lorenzo/ontologies/music#Blowin'_In_The_Wind> .
+                                                                                 :numeroVendite "1100000"^^xsd:unsignedInt .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
