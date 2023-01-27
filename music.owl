@@ -18,20 +18,23 @@
                rdfs:range :GenereMusicale ;
                owl:propertyChainAxiom ( :contiene
                                         :haGenere
-                                      ) .
+                                      ) ;
+               rdfs:label "ha genere" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#assisteA
 :assisteA rdf:type owl:ObjectProperty ;
           rdfs:domain :Persona ;
-          rdfs:range :Evento .
+          rdfs:range :Evento ;
+          rdfs:label "assiste a" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#compostoDa
 :compostoDa rdf:type owl:ObjectProperty ;
             owl:inverseOf :haComposto ;
             rdfs:domain :Brano ;
-            rdfs:range :Musicista .
+            rdfs:range :Musicista ;
+            rdfs:label "composto da" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#contenutoIn
@@ -39,33 +42,38 @@
              owl:inverseOf :contiene ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain :Brano ;
-             rdfs:range :Album .
+             rdfs:range :Album ;
+             rdfs:label "contenuto in" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#contiene
 :contiene rdf:type owl:ObjectProperty ;
           rdfs:domain :Album ;
-          rdfs:range :Brano .
+          rdfs:range :Brano ;
+          rdfs:label "contiene" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#distribuisce
 :distribuisce rdf:type owl:ObjectProperty ;
               owl:inverseOf :distribuitoTramite ;
               rdfs:domain :CanaleDistribuzione ;
-              rdfs:range :Brano .
+              rdfs:range :Brano ;
+              rdfs:label "distribuisce" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#distribuitoTramite
 :distribuitoTramite rdf:type owl:ObjectProperty ;
                     rdfs:domain :Brano ;
-                    rdfs:range :CanaleDistribuzione .
+                    rdfs:range :CanaleDistribuzione ;
+                    rdfs:label "distribuito tramite" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#genereDelBrano
 :genereDelBrano rdf:type owl:ObjectProperty ;
                 owl:inverseOf :haGenere ;
                 rdfs:domain :GenereMusicale ;
-                rdfs:range :Brano .
+                rdfs:range :Brano ;
+                rdfs:label "genere di" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#haAlbum
@@ -74,19 +82,22 @@
          rdfs:range :Album ;
          owl:propertyChainAxiom ( :haComposto
                                   :contenutoIn
-                                ) .
+                                ) ;
+         rdfs:label "ha album" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#haComposto
 :haComposto rdf:type owl:ObjectProperty ;
             rdfs:domain :Musicista ;
-            rdfs:range :Brano .
+            rdfs:range :Brano ;
+            rdfs:label "ha composto" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#haGenere
 :haGenere rdf:type owl:ObjectProperty ;
           rdfs:domain :Brano ;
-          rdfs:range :GenereMusicale .
+          rdfs:range :GenereMusicale ;
+          rdfs:label "ha genere" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#hasMember
@@ -96,7 +107,7 @@
            rdfs:range owl:Thing ;
            rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)."@en ;
            rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl"@en ;
-           rdfs:label "haMembro" ,
+           rdfs:label "ha membro" ,
                       "has member"@en .
 
 
@@ -104,7 +115,7 @@
 :isMemberOf rdf:type owl:ObjectProperty ;
             rdfs:domain owl:Thing ;
             rdfs:range :Collection ;
-            rdfs:label "èMembroDi" .
+            rdfs:label "membro di" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ospita
@@ -115,7 +126,8 @@
                      owl:unionOf ( :Band
                                    :Musicista
                                  )
-                   ] .
+                   ] ;
+        rdfs:label "ospita" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ospiteDi
@@ -125,7 +137,8 @@
                                       :Musicista
                                     )
                       ] ;
-          rdfs:range :Evento .
+          rdfs:range :Evento ;
+          rdfs:label "ospite di" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#situatoIn
@@ -136,20 +149,23 @@
                                        :Luogo
                                      )
                        ] ;
-           rdfs:range :Luogo .
+           rdfs:range :Luogo ;
+           rdfs:label "situato in" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#suona
 :suona rdf:type owl:ObjectProperty ;
        owl:inverseOf :suonatoDa ;
        rdfs:domain :Musicista ;
-       rdfs:range :Strumento .
+       rdfs:range :Strumento ;
+       rdfs:label "suona" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#suonatoDa
 :suonatoDa rdf:type owl:ObjectProperty ;
            rdfs:domain :Strumento ;
-           rdfs:range :Musicista .
+           rdfs:range :Musicista ;
+           rdfs:label "suonato da" .
 
 
 #################################################################
