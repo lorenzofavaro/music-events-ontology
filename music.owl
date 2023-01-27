@@ -120,7 +120,11 @@
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ospiteDi
 :ospiteDi rdf:type owl:ObjectProperty ;
-          rdfs:domain :Musicista ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Band
+                                      :Musicista
+                                    )
+                      ] ;
           rdfs:range :Evento .
 
 
@@ -153,7 +157,9 @@
 #################################################################
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#dataEvento
-:dataEvento rdf:type owl:DatatypeProperty .
+:dataEvento rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Evento ;
+            rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#dataUscita
@@ -676,9 +682,9 @@
                                                    :Basso
                                                    :ChitarraClassica
                                                    :ChitarraElettrica
+                                                   :ChitarraRitmica
                                                    :Violino
                                                    :Violoncello
-                                                   :ChitarraRitmica
                                                  )
                                      ] ;
                  rdfs:subClassOf :Strumento ;
@@ -691,7 +697,6 @@
                  owl:equivalentClass [ rdf:type owl:Class ;
                                        owl:oneOf ( :Clarinetto
                                                    :Flauto
-                                                   :Microfono
                                                    :Sassofono
                                                    :Trombone
                                                  )
@@ -762,47 +767,62 @@ owl:Thing rdfs:label "Musica" .
 :ACDC rdf:type owl:NamedIndividual ;
       :hasMember :AngusYoung ,
                  :BonScott ,
-                 :BrianJohnson .
+                 :BrianJohnson ;
+      rdfs:label "AC/DC" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Africa
-:Africa rdf:type owl:NamedIndividual .
+:Africa rdf:type owl:NamedIndividual ;
+        rdfs:label "Africa" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AmericaDelNord
-:AmericaDelNord rdf:type owl:NamedIndividual .
+:AmericaDelNord rdf:type owl:NamedIndividual ;
+                rdfs:label "America del Nord" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AmericaDelSud
-:AmericaDelSud rdf:type owl:NamedIndividual .
+:AmericaDelSud rdf:type owl:NamedIndividual ;
+               rdfs:label "America del Sud" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AngusYoung
 :AngusYoung rdf:type owl:NamedIndividual ;
-            :suona :ChitarraElettrica .
+            :suona :ChitarraElettrica ;
+            rdfs:label "Angus Young" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic
-:AppleMusic rdf:type owl:NamedIndividual .
+:AppleMusic rdf:type owl:NamedIndividual ;
+            rdfs:label "Apple Music" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#Argentina
+:Argentina rdf:type owl:NamedIndividual ,
+                    :Nazione ;
+           :situatoIn :AmericaDelSud ;
+           rdfs:label "Argentina" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Arpa
-:Arpa rdf:type owl:NamedIndividual ,
-               :Strumento .
+:Arpa rdf:type owl:NamedIndividual ;
+      rdfs:label "Arpa" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Asia
-:Asia rdf:type owl:NamedIndividual .
+:Asia rdf:type owl:NamedIndividual ;
+      rdfs:label "Asia" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Basso
-:Basso rdf:type owl:NamedIndividual ,
-                :Strumento .
+:Basso rdf:type owl:NamedIndividual ;
+       rdfs:label "Basso" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Batteria
 :Batteria rdf:type owl:NamedIndividual ,
-                   :Strumento .
+                   :Strumento ;
+          rdfs:label "Batteria" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Beatles
@@ -810,32 +830,37 @@ owl:Thing rdfs:label "Musica" .
          :hasMember :GeorgeHarrison ,
                     :JohnLennon ,
                     :PaulMcCartney ,
-                    :RingoStarr .
+                    :RingoStarr ;
+         rdfs:label "Beatles" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind
 :BlowinInTheWind rdf:type owl:NamedIndividual ;
                  :compostoDa :BobDylan ;
                  :contenutoIn :TheFreewheelinBobDylan ;
-                 :haGenere :Rock .
+                 :haGenere :Rock ;
+                 rdfs:label "Blowin In The Wind" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan
 :BobDylan rdf:type owl:NamedIndividual ;
           :suona :ChitarraClassica ,
                  :Voce ;
-          :età "81"^^xsd:unsignedInt .
+          :età "81"^^xsd:unsignedInt ;
+          rdfs:label "Bob Dylan" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BonScott
 :BonScott rdf:type owl:NamedIndividual ;
-          :suona :Voce .
+          :suona :Voce ;
+          rdfs:label "Bon Scott" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Boston
 :Boston rdf:type owl:NamedIndividual ,
                  :Città ;
-        :situatoIn :USA .
+        :situatoIn :USA ;
+        rdfs:label "Boston" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BostonGardens1974
@@ -843,69 +868,92 @@ owl:Thing rdfs:label "Musica" .
                    :ospita :BobDylan ;
                    :situatoIn :Boston ;
                    :dataEvento "1974-01-14T00:00:00"^^xsd:dateTime ;
-                   :numeroSpettatori "8000"^^xsd:unsignedInt .
+                   :numeroSpettatori "8000"^^xsd:unsignedInt ;
+                   rdfs:label "Boston Gardens 1974" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#BrianJohnson
 :BrianJohnson rdf:type owl:NamedIndividual ;
-              :suona :Voce .
+              :suona :Voce ;
+              rdfs:label "Brian Johnson" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#BuenosAires
+:BuenosAires rdf:type owl:NamedIndividual ,
+                      :Città ;
+             :situatoIn :Argentina ;
+             rdfs:label "Buenos Aires" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ChitarraClassica
-:ChitarraClassica rdf:type owl:NamedIndividual ,
-                           :Strumento .
+:ChitarraClassica rdf:type owl:NamedIndividual ;
+                  rdfs:label "Chitarra Classica" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#ChitarraElettrica
-:ChitarraElettrica rdf:type owl:NamedIndividual ,
-                            :Strumento .
+:ChitarraElettrica rdf:type owl:NamedIndividual ;
+                   rdfs:label "Chitarra Elettrica" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#ChitarraRitmica
+:ChitarraRitmica rdf:type owl:NamedIndividual ;
+                 rdfs:label "Chitarra Ritmica" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Clarinetto
 :Clarinetto rdf:type owl:NamedIndividual ,
-                     :Strumento .
+                     :Strumento ;
+            rdfs:label "Clarinetto" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#DiscoRadio
-:DiscoRadio rdf:type owl:NamedIndividual .
+:DiscoRadio rdf:type owl:NamedIndividual ;
+            rdfs:label "DiscoRadio" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#EdSheeran
 :EdSheeran rdf:type owl:NamedIndividual ;
            :suona :ChitarraClassica ,
                   :Voce ;
-           :età "31"^^xsd:unsignedInt .
+           :età "31"^^xsd:unsignedInt ;
+           rdfs:label "Ed Sheeran" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#EsseStore
-:EsseStore rdf:type owl:NamedIndividual .
+:EsseStore rdf:type owl:NamedIndividual ;
+           rdfs:label "Esse Store" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Europa
-:Europa rdf:type owl:NamedIndividual .
+:Europa rdf:type owl:NamedIndividual ;
+        rdfs:label "Europa" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Flauto
 :Flauto rdf:type owl:NamedIndividual ,
-                 :Strumento .
+                 :Strumento ;
+        rdfs:label "Flauto" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Folk
 :Folk rdf:type owl:NamedIndividual ,
-               :GenereMusicale .
+               :GenereMusicale ;
+      rdfs:label "Folk" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#GeorgeHarrison
 :GeorgeHarrison rdf:type owl:NamedIndividual ;
                 :suona :ChitarraClassica ,
-                       :Voce .
+                       :Voce ;
+                rdfs:label "George Harrison" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#GirlFromTheNorthCountry
 :GirlFromTheNorthCountry rdf:type owl:NamedIndividual ;
                          :compostoDa :BobDylan ;
                          :contenutoIn :TheFreewheelinBobDylan ;
-                         :haGenere :Folk .
+                         :haGenere :Folk ;
+                         rdfs:label "Girl From The North Country" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude
@@ -915,97 +963,119 @@ owl:Thing rdfs:label "Musica" .
                      :PaulMcCartney ,
                      :RingoStarr ;
          :distribuitoTramite :AppleMusic ;
-         :haGenere :Pop .
+         :haGenere :Pop ;
+         rdfs:label "Hey Jude" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Jazz
 :Jazz rdf:type owl:NamedIndividual ,
-               :GenereMusicale .
+               :GenereMusicale ;
+      rdfs:label "Jazz" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#JohnLennon
 :JohnLennon rdf:type owl:NamedIndividual ;
             :suona :ChitarraClassica ,
-                   :Voce .
+                   :Voce ;
+            rdfs:label "John Lennon" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#JustinBieber
 :JustinBieber rdf:type owl:NamedIndividual ;
               :suona :Voce ;
-              :età "28"^^xsd:unsignedInt .
+              :età "28"^^xsd:unsignedInt ;
+              rdfs:label "Justin Bieber" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#KissTV
-:KissTV rdf:type owl:NamedIndividual .
+:KissTV rdf:type owl:NamedIndividual ;
+        rdfs:label "Kiss TV" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#MTV
-:MTV rdf:type owl:NamedIndividual .
+:MTV rdf:type owl:NamedIndividual ;
+     rdfs:label "MTV" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#MalcolmYoung
+:MalcolmYoung rdf:type owl:NamedIndividual ;
+              :suona :ChitarraRitmica ;
+              rdfs:label "Malcolm Young" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Masters_of_War
 :Masters_of_War rdf:type owl:NamedIndividual ;
                 :compostoDa :BobDylan ;
                 :contenutoIn :TheFreewheelinBobDylan ;
-                :haGenere :Rock .
+                :haGenere :Rock ;
+                rdfs:label "Masters of War" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#MediaWorld
-:MediaWorld rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/music#Microfono
-:Microfono rdf:type owl:NamedIndividual ,
-                    :Strumento .
+:MediaWorld rdf:type owl:NamedIndividual ;
+            rdfs:label "MediaWorld" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Oceania
-:Oceania rdf:type owl:NamedIndividual .
+:Oceania rdf:type owl:NamedIndividual ;
+         rdfs:label "Oceania" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Organo
-:Organo rdf:type owl:NamedIndividual ,
-                 :Strumento .
+:Organo rdf:type owl:NamedIndividual ;
+        rdfs:label "Organo" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#PaulMcCartney
 :PaulMcCartney rdf:type owl:NamedIndividual ;
                :suona :ChitarraClassica ,
                       :Voce ;
-               :età "80"^^xsd:unsignedInt .
+               :età "80"^^xsd:unsignedInt ;
+               rdfs:label "Paul McCartney" .
+
+
+###  http://www.semanticweb.org/lorenzo/ontologies/music#PhilRudd
+:PhilRudd rdf:type owl:NamedIndividual ;
+          :suona :Batteria ;
+          rdfs:label "Phil Rudd" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Pianoforte
-:Pianoforte rdf:type owl:NamedIndividual ,
-                     :Strumento .
+:Pianoforte rdf:type owl:NamedIndividual ;
+            rdfs:label "Pianoforte" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Pianola
-:Pianola rdf:type owl:NamedIndividual ,
-                  :Strumento .
+:Pianola rdf:type owl:NamedIndividual ;
+         rdfs:label "Pianola" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Pop
 :Pop rdf:type owl:NamedIndividual ,
-              :GenereMusicale .
+              :GenereMusicale ;
+     rdfs:label "Pop" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#RDS
-:RDS rdf:type owl:NamedIndividual .
+:RDS rdf:type owl:NamedIndividual ;
+     rdfs:label "RDS" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#RTL102.5
-:RTL102.5 rdf:type owl:NamedIndividual .
+:RTL102.5 rdf:type owl:NamedIndividual ;
+          rdfs:label "RTL 102.5" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#RadioZeta
-:RadioZeta rdf:type owl:NamedIndividual .
+:RadioZeta rdf:type owl:NamedIndividual ;
+           rdfs:label "RadioZeta" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#RingoStarr
 :RingoStarr rdf:type owl:NamedIndividual ;
             :suona :Batteria ;
-            :età "82"^^xsd:unsignedInt .
+            :età "82"^^xsd:unsignedInt ;
+            rdfs:label "Ringo Starr" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009
@@ -1013,55 +1083,63 @@ owl:Thing rdfs:label "Musica" .
                 :ospita :ACDC ;
                 :situatoIn :BuenosAires ;
                 :dataEvento "2009-12-01T00:00:00"^^xsd:dateTime ;
-                :numeroSpettatori "200000"^^xsd:unsignedInt .
+                :numeroSpettatori "200000"^^xsd:unsignedInt ;
+                rdfs:label "River Plate 2009" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Rock
 :Rock rdf:type owl:NamedIndividual ,
-               :GenereMusicale .
+               :GenereMusicale ;
+      rdfs:label "Rock" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Sassofono
 :Sassofono rdf:type owl:NamedIndividual ,
-                    :Strumento .
+                    :Strumento ;
+           rdfs:label "Sassofono" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#SoundCloud
-:SoundCloud rdf:type owl:NamedIndividual .
+:SoundCloud rdf:type owl:NamedIndividual ;
+            rdfs:label "SoundCloud" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Spotify
-:Spotify rdf:type owl:NamedIndividual .
+:Spotify rdf:type owl:NamedIndividual ;
+         rdfs:label "Spotify" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan
 :TheFreewheelinBobDylan rdf:type owl:NamedIndividual ;
-                        :numeroVendite "1100000"^^xsd:unsignedInt .
+                        :numeroVendite "1100000"^^xsd:unsignedInt ;
+                        rdfs:label "The Freewheelin' Bob Dylan" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Trombone
-:Trombone rdf:type owl:NamedIndividual ,
-                   :Strumento .
+:Trombone rdf:type owl:NamedIndividual ;
+          rdfs:label "Trombone" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#USA
 :USA rdf:type owl:NamedIndividual ,
               :Nazione ;
-     :situatoIn :AmericaDelNord .
+     :situatoIn :AmericaDelNord ;
+     rdfs:label "USA" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Vevo
-:Vevo rdf:type owl:NamedIndividual .
+:Vevo rdf:type owl:NamedIndividual ;
+      rdfs:label "VEVO" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violino
-:Violino rdf:type owl:NamedIndividual ,
-                  :Strumento .
+:Violino rdf:type owl:NamedIndividual ;
+         rdfs:label "Violino" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Violoncello
-:Violoncello rdf:type owl:NamedIndividual ,
-                      :Strumento .
+:Violoncello rdf:type owl:NamedIndividual ;
+             rdfs:label "Violoncello" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Voce
@@ -1073,40 +1151,18 @@ owl:Thing rdfs:label "Musica" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Wallmart
-:Wallmart rdf:type owl:NamedIndividual .
+:Wallmart rdf:type owl:NamedIndividual ;
+          rdfs:label "Wallmart" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Youtube
-:Youtube rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/musica#Argentina
-:Argentina rdf:type owl:NamedIndividual ,
-                    :Nazione ;
-           :situatoIn :AmericaDelSud .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/musica#BuenosAires
-:BuenosAires rdf:type owl:NamedIndividual ;
-             :situatoIn :Argentina .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/musica#ChitarraRitmica
-:ChitarraRitmica rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/musica#MalcolmYoung
-:MalcolmYoung rdf:type owl:NamedIndividual ;
-              :suona :ChitarraRitmica .
-
-
-###  http://www.semanticweb.org/lorenzo/ontologies/musica#PhilRudd
-:PhilRudd rdf:type owl:NamedIndividual ;
-          :suona :Batteria .
+:Youtube rdf:type owl:NamedIndividual ;
+         rdfs:label "Youtube" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/musica#4Music
-<http://www.semanticweb.org/lorenzo/ontologies/musica#4Music> rdf:type owl:NamedIndividual .
+<http://www.semanticweb.org/lorenzo/ontologies/musica#4Music> rdf:type owl:NamedIndividual ;
+                                                              rdfs:label "4Music" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
