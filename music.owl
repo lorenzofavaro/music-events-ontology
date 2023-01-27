@@ -175,31 +175,36 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#dataEvento
 :dataEvento rdf:type owl:DatatypeProperty ;
             rdfs:domain :Evento ;
-            rdfs:range xsd:dateTime .
+            rdfs:range xsd:dateTime ;
+            rdfs:label "data evento" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#dataUscita
 :dataUscita rdf:type owl:DatatypeProperty ;
             rdfs:domain :Album ;
-            rdfs:range xsd:dateTime .
+            rdfs:range xsd:dateTime ;
+            rdfs:label "data uscita" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#età
 :età rdf:type owl:DatatypeProperty ;
      rdfs:domain :Persona ;
-     rdfs:range xsd:unsignedInt .
+     rdfs:range xsd:unsignedInt ;
+     rdfs:label "età" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#numeroSpettatori
 :numeroSpettatori rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Evento ;
-                  rdfs:range xsd:unsignedInt .
+                  rdfs:range xsd:unsignedInt ;
+                  rdfs:label "numero spettatori" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite
 :numeroVendite rdf:type owl:DatatypeProperty ;
                rdfs:domain :Album ;
-               rdfs:range xsd:unsignedInt .
+               rdfs:range xsd:unsignedInt ;
+               rdfs:label "numero vendite" .
 
 
 #################################################################
