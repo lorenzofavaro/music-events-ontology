@@ -230,7 +230,8 @@
 ###  http://www.semanticweb.org/lorenzo/ontologies/musica#prodottoDa
 :prodottoDa rdf:type owl:ObjectProperty ;
             rdfs:domain :Brano ;
-            rdfs:range :Produttore .
+            rdfs:range :Produttore ;
+            rdfs:label "prodotto da" .
 
 
 #################################################################
@@ -302,7 +303,8 @@
                             ] ;
         rdfs:subClassOf :Generazione ;
         rdfs:comment "Persona che ha raggiunto il pieno sviluppo fisico e psichico di età compresa tra 30 e 65 anni." ;
-        rdfs:label "Adulto" .
+        rdfs:label "Adult"@en ,
+                   "Adulto"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Album
@@ -313,7 +315,8 @@
                              owl:onClass :Brano
                            ] ;
        rdfs:comment "Raccolta di brani musicali di uno stesso artista." ;
-       rdfs:label "Album" .
+       rdfs:label "Album"@en ,
+                  "Album"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumDiamante
@@ -329,7 +332,8 @@
                                    ] ;
                rdfs:subClassOf :Album ;
                rdfs:comment "Album musicale che ha totalizzato un numero di vendite pari ad almeno 1 milione." ;
-               rdfs:label "Album di Diamante" .
+               rdfs:label "Album di Diamante"@ita ,
+                          "Diamant Album"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumOro
@@ -347,7 +351,8 @@
                               ] ;
           rdfs:subClassOf :Album ;
           rdfs:comment "Album musicale che ha totalizzato un numero di vendite compreso tra 50 mila e 100 mila." ;
-          rdfs:label "Album d'Oro" .
+          rdfs:label "Album d'Oro"@ita ,
+                     "Gold Album"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#AlbumPlatino
@@ -365,7 +370,8 @@
                                   ] ;
               rdfs:subClassOf :Album ;
               rdfs:comment "Album musicale che ha totalizzato un numero di vendite compreso tra 100 mila e 1 milione." ;
-              rdfs:label "Album di Platino" .
+              rdfs:label "Album di Platino"@ita ,
+                         "Platino Album"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Anziano
@@ -381,12 +387,15 @@
                              ] ;
          rdfs:subClassOf :Generazione ;
          rdfs:comment "Persona di età uguale o superiore a 65 anni." ;
-         rdfs:label "Anziano" .
+         rdfs:label "Anziano"@ita ,
+                    "Elderly"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Artista
 :Artista rdf:type owl:Class ;
-         rdfs:subClassOf :Persona .
+         rdfs:subClassOf :Persona ;
+         rdfs:label "Artist"@en ,
+                    "Artista"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Band
@@ -406,7 +415,8 @@
       rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
       owl:disjointWith :CasaDiscografica ;
       rdfs:comment "Gruppo di musicisti." ;
-      rdfs:label "Band" .
+      rdfs:label "Band"@en ,
+                 "Band"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Bassista
@@ -424,7 +434,8 @@
                               ] ;
           rdfs:subClassOf :Musicista ;
           rdfs:comment "Musicista che suona uno strumento a corde, nello specifico il Basso." ;
-          rdfs:label "Bassista" .
+          rdfs:label "Bass Player"@en ,
+                     "Bassista"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Batterista
@@ -442,7 +453,8 @@
                                 ] ;
             rdfs:subClassOf :Musicista ;
             rdfs:comment "Musicista che suona uno strumento a percussione, nello specifico la Batteria." ;
-            rdfs:label "Batterista" .
+            rdfs:label "Batterista"@ita ,
+                       "Drummer"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Brano
@@ -466,7 +478,8 @@
                              rdf:type owl:Class
                            ] ;
        rdfs:comment "Composizione vocale scritta per una o più voci perlopiù con accompagnamento strumentale." ;
-       rdfs:label "Brano" .
+       rdfs:label "Brano"@ita ,
+                  "Song"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale
@@ -477,7 +490,8 @@
                                       :Televisione
                                     ) ;
                 rdfs:comment "Un canale di distribuzione digitale è un mezzo che utilizza la tecnologia elettronica per la distribuzione di beni e servizi." ;
-                rdfs:label "Canale Digitale" .
+                rdfs:label "Canale Digitale"@ita ,
+                           "Digital Channel"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione
@@ -492,14 +506,16 @@
                                                        ]
                                          ] ;
                      rdfs:comment "La distribuzione commerciale è lo strumento attraverso il quale le aziende produttrici e distributrici immettono sul mercato beni e servizi." ;
-                     rdfs:label "Canale di Distribuzione" .
+                     rdfs:label "Canale di Distribuzione"@ita ,
+                                "Distribution Channel"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#CanaleFisico
 :CanaleFisico rdf:type owl:Class ;
               rdfs:subClassOf :CanaleDistribuzione ;
               rdfs:comment "Un canale di distribuzione fisico è un mezzo che utilizza supporti materiali per la distribuzione di beni e servizi." ;
-              rdfs:label "Canale Fisico" .
+              rdfs:label "Canale Fisico"@ita ,
+                         "Physical Channel"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Cantante
@@ -512,8 +528,9 @@
                                                    ]
                               ] ;
           rdfs:subClassOf :Musicista ;
-          rdfs:comment "Cantante" ,
-                       "Musicista che, mediante l'utilizzo della propria voce, produce una successione di suoni ordinati per ritmo e altezza." .
+          rdfs:comment "Cantante"@ita ,
+                       "Musicista che, mediante l'utilizzo della propria voce, produce una successione di suoni ordinati per ritmo e altezza." ;
+          rdfs:label "Singer"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#CasaDiscografica
@@ -534,7 +551,8 @@
                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
                   rdfs:comment "Attività di produzione e vendita di musica." ,
                                "Business producing and selling music."@en ;
-                  rdfs:label "Casa Discografica" .
+                  rdfs:label "Casa Discografica"@ita ,
+                             "Record Company"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Chitarrista
@@ -554,14 +572,15 @@
                                  ] ;
              rdfs:subClassOf :Musicista ;
              rdfs:comment "Musicista che suona uno strumento a corde, nello specifico la chitarra classica o la chitarra elettrica." ;
-             rdfs:label "Chitarrista" .
+             rdfs:label "Chitarrista"@ita ,
+                        "Guitarist"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Città
 :Città rdf:type owl:Class ;
        rdfs:subClassOf :Luogo ;
        rdfs:comment "Large permanent human settlement."@en ;
-       rdfs:label "Città" ,
+       rdfs:label "Città"@ita ,
                   "City"@en ;
        rdfs:seeAlso "https://www.wikidata.org/wiki/Q515" .
 
@@ -581,7 +600,8 @@
                               ] ;
           rdfs:subClassOf :Evento ;
           rdfs:comment "Evento musicale a cui partecipa un numero di spettatori compreso tra 500 e 10 mila." ;
-          rdfs:label "Concerto" ;
+          rdfs:label "Concert"@en ,
+                     "Concerto"@ita ;
           rdfs:seeAlso "https://www.wikidata.org/wiki/Q182832" .
 
 
@@ -599,7 +619,7 @@
             rdfs:subClassOf :Luogo ;
             rdfs:comment "Large landmass identified by convention."@en ;
             rdfs:label "Continent"@en ,
-                       "Continente" ;
+                       "Continente"@ita ;
             rdfs:seeAlso "https://www.wikidata.org/wiki/Q5107" .
 
 
@@ -618,7 +638,8 @@
                                 ] ;
             rdfs:subClassOf :Evento ;
             rdfs:comment "Evento musicale a cui partecipa un numero di spettatori compreso tra 10 e 500." ;
-            rdfs:label "Esibizione" .
+            rdfs:label "Esibizione"@ita ,
+                       "Exhibition"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Evento
@@ -628,7 +649,8 @@
                               :Festival
                             ) ;
         rdfs:comment "Eventi temporanei e programmati, come una conferenza, un festival, una competizione o simili." ;
-        rdfs:label "Evento" .
+        rdfs:label "Event"@en ,
+                   "Evento"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Festival
@@ -644,7 +666,8 @@
                               ] ;
           rdfs:subClassOf :Evento ;
           rdfs:comment "Evento musicale a cui partecipa un numero di spettatori maggiore di 10 mila." ;
-          rdfs:label "Festival" .
+          rdfs:label "Festival"@en ,
+                     "Festival"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Generazione
@@ -656,14 +679,15 @@
                                  ) ;
              rdfs:comment "A generation refers to all of the people born and living at about the same time, regarded collectively. It can also be described as, \"the average period, generally considered to be about 20–⁠30 years, during which children are born and grow up, become adults, and begin to have children.\" In kinship terminology, it is a structural term designating the parent-child relationship. It is known as biogenesis, reproduction, or procreation in the biological sciences."@en ;
              rdfs:label "Generation"@en ,
-                        "Generazione" ;
+                        "Generazione"@ita ;
              rdfs:seeAlso "https://dbpedia.org/page/Generation" .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#GenereMusicale
 :GenereMusicale rdf:type owl:Class ;
                 rdfs:comment "Categoria convenzionale che identifica e classifica i brani e le composizioni in base a criteri di affinità." ;
-                rdfs:label "Genere Musicale" .
+                rdfs:label "Genere Musicale"@ita ,
+                           "Music Genre"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Giovane
@@ -681,14 +705,15 @@
                              ] ;
          rdfs:subClassOf :Generazione ;
          rdfs:comment "Persona di età giovanile compresa tra 12 e 30 anni." ;
-         rdfs:label "Giovane" .
+         rdfs:label "Giovane"@ita ,
+                    "Young"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Luogo
 :Luogo rdf:type owl:Class ;
        rdfs:comment "Location of the object, structure or event."@en ;
        rdfs:label "Location"@en ,
-                  "Luogo" ;
+                  "Luogo"@ita ;
        rdfs:seeAlso "https://www.wikidata.org/wiki/Property:P276" .
 
 
@@ -710,7 +735,8 @@
            rdfs:subClassOf :Artista ;
            owl:disjointWith :Produttore ;
            rdfs:comment "Il musicista è una persona che svolge e ha talento per una determinata attività in musica, inerente alla creazione o all'esecuzione di composizioni strumentali, vocali, corali." ;
-           rdfs:label "Musicista" .
+           rdfs:label "Musician"@en ,
+                      "Musicista"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Nazione
@@ -718,7 +744,7 @@
          rdfs:subClassOf :Luogo ;
          rdfs:comment "Community of people who share a common language, culture, ethnicity, descent, or history."@en ;
          rdfs:label "Nation"@en ,
-                    "Nazione" ;
+                    "Nazione"@ita ;
          rdfs:seeAlso "https://www.wikidata.org/wiki/Q6266" .
 
 
@@ -726,14 +752,15 @@
 :Negozio rdf:type owl:Class ;
          rdfs:subClassOf :CanaleFisico ;
          rdfs:comment "Place where items or services are sold."@en ;
-         rdfs:label "Negozio" ,
+         rdfs:label "Negozio"@ita ,
                     "Shop"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Persona
 :Persona rdf:type owl:Class ;
          owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> ;
-         rdfs:label "Persona" .
+         rdfs:label "Person"@en ,
+                    "Persona"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Produttore
@@ -743,21 +770,25 @@
                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass :Brano
                                 ] ;
-            rdfs:subClassOf :Artista .
+            rdfs:subClassOf :Artista ;
+            rdfs:label "Producer"@en ,
+                       "Produttore"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Radio
 :Radio rdf:type owl:Class ;
        rdfs:subClassOf :CanaleDigitale ;
        rdfs:comment "Un programma radiofonico o trasmissione radiofonica è un qualsiasi programma trasmesso a mezzo delle onde radio e ricevibile con degli apparecchi ricevitori." ;
-       rdfs:label "Radio" .
+       rdfs:label "Radio"@en ,
+                  "Radio"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Streaming
 :Streaming rdf:type owl:Class ;
            rdfs:subClassOf :CanaleDigitale ;
            rdfs:comment "I servizi di streaming sono servizi online che consentono agli utenti di guardare contenuti video o ascoltare musica in modalità \"streaming\", ovvero senza dover prima scaricare il contenuto sul proprio dispositivo. Questi servizi sono solitamente sottoscritti tramite abbonamento mensile o annuale." ;
-           rdfs:label "Streaming" .
+           rdfs:label "Streaming"@en ,
+                      "Streaming"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Strumento
@@ -769,7 +800,8 @@
                                ) ;
            rdfs:comment "Describes all musical instrument."@en ,
                         "Descrive tutti gli strumenti musicali." ;
-           rdfs:label "Strumento" ;
+           rdfs:label "Instrument"@en ,
+                      "Strumento"@ita ;
            rdfs:seeAlso "https://dbpedia.org/ontology/Instrument" .
 
 
@@ -787,7 +819,8 @@
                                      ] ;
                  rdfs:subClassOf :Strumento ;
                  rdfs:comment "Tipo di strumento musicale che produce suoni tramite la vibrazione delle corde." ;
-                 rdfs:label "Strumento a Corde" .
+                 rdfs:label "Stringed Instrument"@en ,
+                            "Strumento a Corde"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#StrumentoAFiato
@@ -801,7 +834,8 @@
                                      ] ;
                  rdfs:subClassOf :Strumento ;
                  rdfs:comment "Tipo di strumento musicale che produce suoni tramite la vibrazione delle labbra o delle corde vocali dell'esecutore, mentre soffia in una bocca o in una canna." ;
-                 rdfs:label "Strumento a Fiato" .
+                 rdfs:label "Strumento a Fiato"@ita ,
+                            "Wind Instrument"@en .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#StrumentoAPercussione
@@ -812,7 +846,8 @@
                                            ] ;
                        rdfs:subClassOf :Strumento ;
                        rdfs:comment "Tipo di strumento musicale che produce suoni tramite la percussione o il colpo di un oggetto." ;
-                       rdfs:label "Strumento a Percussione" .
+                       rdfs:label "Percussion Instrument"@en ,
+                                  "Strumento a Percussione"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#StrumentoATastiera
@@ -825,7 +860,8 @@
                                         ] ;
                     rdfs:subClassOf :Strumento ;
                     rdfs:comment "Tipo di strumento musicale che produce suoni tramite la pressione di tasti o pulsanti, che azionano meccanismi interni che producono il suono." ;
-                    rdfs:label "Strumento a Tastiera" .
+                    rdfs:label "Keyboard Instrument"@en ,
+                               "Strumento a Tastiera"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Tastierista
@@ -836,14 +872,16 @@
                                  ] ;
              rdfs:subClassOf :Musicista ;
              rdfs:comment "Musicista che suona tastiere elettroniche, in grado di creare o ricreare diversi tipi di effetti." ;
-             rdfs:label "Tastierista" .
+             rdfs:label "Keyboard Player"@en ,
+                        "Tastierista"@ita .
 
 
 ###  http://www.semanticweb.org/lorenzo/ontologies/music#Televisione
 :Televisione rdf:type owl:Class ;
              rdfs:subClassOf :CanaleDigitale ;
              rdfs:comment "Un programma televisivo (o trasmissione televisiva, o anche semplicemente programma o trasmissione quando è chiaro il contesto televisivo) è una produzione audiovisiva che può essere trasmessa tramite televisione o Internet con finalità di informazione o intrattenimento. L'insieme dei programmi televisivi di un'emittente televisiva è chiamato palinsesto." ;
-             rdfs:label "Televisione" .
+             rdfs:label "Television"@en ,
+                        "Televisione" .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -1307,7 +1345,8 @@
 #    Annotations
 #################################################################
 
-owl:Thing rdfs:label "Musica" .
+owl:Thing rdfs:label "Musica"@ita ,
+                     "Music"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
