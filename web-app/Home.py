@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.title('Music Ontology')
+st.title('Music Ontology 🎼')
