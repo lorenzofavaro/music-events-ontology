@@ -1406,7 +1406,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumHeyJude">
         <music:dataUscita>1970-02-26</music:dataUscita>
         <music:numeroVendite rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8000000</music:numeroVendite>
-        <rdfs:label>Album Hey Jude</rdfs:label>
+        <rdfs:label>Hey Jude!</rdfs:label>
     </owl:NamedIndividual>
     
 
