@@ -1,8 +1,8 @@
 {
   "musicians": {
-    "all" : "SELECT ?Musician ?Age ?Band WHERE {?Musician a musica:Musicista. OPTIONAL { ?Musician musica:et\\u00E0 ?Age . } OPTIONAL {?Band musica:haComponente ?Musician .}}",
-    "only_bands": "SELECT ?Musician ?Band WHERE { ?Band musica:haComponente ?Musician } ORDER BY ?Band",
-    "only_solists": "SELECT ?Musician ?Age WHERE { ?Musician a musica:Musicista. ?Musician musica:et\\u00E0 ?Age. FILTER NOT EXISTS { ?Musician musica:componenteDi ?Band }}"
+    "all" : "SELECT ?Musician ?Age (group_concat(?SubClass; separator=\", \") as ?Type) ?Band WHERE { ?Musician a ?SubClass. OPTIONAL { ?Musician musica:et\\u00E0 ?Age . } OPTIONAL {?Band musica:haComponente ?Musician .} FILTER(?SubClass != musica:Musicista && EXISTS{ ?SubClass rdfs:subClassOf musica:Musicista})} group by ?Musician ?Age ?Band",
+    "only_bands": "SELECT ?Musician ?Age ?Band WHERE { ?Band musica:haComponente ?Musician . OPTIONAL {?Musician musica:et\\u00E0 ?Age}} ORDER BY ?Band",
+    "only_solists": "SELECT ?Musician ?Age (group_concat(?SubClass; separator=\", \") as ?Type) WHERE { ?Musician a ?SubClass. OPTIONAL { ?Musician musica:et\u00E0 ?Age . } OPTIONAL {?Band musica:haComponente ?Musician .} FILTER(NOT EXISTS { ?Musician musica:componenteDi ?Band } && ?SubClass != musica:Musicista && EXISTS{ ?SubClass rdfs:subClassOf musica:Musicista})} group by ?Musician ?Age"
   },
   "albums": "SELECT ?owner ?album ?sales ?Certificate ?outDate WHERE {{?band a musica:Band .?band musica:bandHaAlbum ?album .BIND(?band AS ?owner) OPTIONAL {?album musica:haCertificato ?Certificate. } { ?album musica:numeroVendite ?sales. } OPTIONAL { ?album musica:dataUscita ?outDate. } } UNION { ?musician a musica:Musicista . ?musician musica:haAlbum ?album . FILTER NOT EXISTS { ?band a musica:Band . ?band musica:bandHaAlbum ?album . } BIND(?musician AS ?owner) OPTIONAL {?album musica:haCertificato ?Certificate .} { ?album musica:numeroVendite ?sales. } OPTIONAL { ?album musica:dataUscita ?outDate. } }}",
   "songs": "SELECT ?Song (group_concat(?Writer; separator=\", \") as ?Writers) ?Album WHERE { ?AlbumItem a musica:Album. OPTIONAL {?AlbumItem musica:contiene ?SongItem .} OPTIONAL {?SongItem musica:scrittoDa ?Writer .} ?AlbumItem rdfs:label ?Album. ?SongItem rdfs:label ?Song } GROUP BY ?Album ?Song",

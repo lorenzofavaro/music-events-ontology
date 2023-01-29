@@ -7,9 +7,9 @@ only_bands_query = onto_prefix + queries['musicians']['only_bands']
 only_solists_query = onto_prefix + queries['musicians']['only_solists']
 
 st.title('Musicians 🧑‍🎤')
-musician_type = st.selectbox('Type', ('', 'Only Solists', 'Only Band'))
+musician_type = st.selectbox('Type', ('All', 'Only Solists', 'Only Band'))
 
-if not musician_type:
+if musician_type == 'All':
     result = g.query(all_musicians_query)
 elif musician_type == 'Only Band':
     result = g.query(only_bands_query)
