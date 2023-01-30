@@ -2,8 +2,9 @@ import streamlit as st
 
 from init import *
 
-albums_query = onto_prefix + queries['albums']
+albums_query = onto_prefix + queries['free']['albums']
 
+st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Albums 💿')
 result = g.query(albums_query)
 
