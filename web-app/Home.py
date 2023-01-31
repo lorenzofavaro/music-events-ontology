@@ -15,13 +15,13 @@ col1, col2, = st.columns(2)
 with col1:
     search = st.text_input('To search', placeholder='Bob Dylan')
 with col2:
-    category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Companies', 'Genres'))
+    category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Labels', 'Genres'))
+
+query = onto_prefix + queries['free'][category.lower()]
+result = g.query(query)
+df = pd.DataFrame(result, columns=result.vars)
 
 if search:
-    query = onto_prefix + queries['parametrized'][category.lower()].format(search)
-else:
-    query = onto_prefix + queries['free'][category.lower()]
+    df = df[df.iloc[:, 0].str.startswith(search)]
 
-result = g.query(query)
-df = beautify_df(pd.DataFrame(result, columns=result.vars))
-st.dataframe(df)
+st.dataframe(beautify_df(df))
