@@ -1404,7 +1404,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#AlbumHeyJude -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumHeyJude">
-        <music:dataUscita>1970-02-26</music:dataUscita>
         <music:numeroVendite rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8000000</music:numeroVendite>
         <rdfs:label>Hey Jude!</rdfs:label>
     </owl:NamedIndividual>
@@ -2103,10 +2102,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="#x">
+    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#x">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="#sales">
+    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#sales">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
@@ -2121,7 +2120,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2131,8 +2130,8 @@
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                                <swrl:argument1 rdf:resource="#x"/>
-                                <swrl:argument2 rdf:resource="#sales"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2145,7 +2144,7 @@
                                         <swrl:arguments>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:resource="#sales"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2167,7 +2166,7 @@
                                                 <swrl:arguments>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:resource="#x"/>
+                                                        <rdf:first rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2195,7 +2194,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#haCertificato"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CertificatoPlatino"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2215,7 +2214,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2225,8 +2224,8 @@
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                                <swrl:argument1 rdf:resource="#x"/>
-                                <swrl:argument2 rdf:resource="#sales"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2239,7 +2238,7 @@
                                         <swrl:arguments>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:resource="#sales"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2265,7 +2264,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#haCertificato"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CertificatoDiamante"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2285,7 +2284,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2295,8 +2294,8 @@
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                                <swrl:argument1 rdf:resource="#x"/>
-                                <swrl:argument2 rdf:resource="#sales"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2309,7 +2308,7 @@
                                         <swrl:arguments>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:resource="#sales"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#sales"/>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2331,7 +2330,7 @@
                                                 <swrl:arguments>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:resource="#x"/>
+                                                        <rdf:first rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -2359,7 +2358,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#haCertificato"/>
-                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#x"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CertificatoOro"/>
                     </rdf:Description>
                 </rdf:first>
