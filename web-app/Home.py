@@ -13,15 +13,15 @@ st.write('You can explore it through the side menu or by using the search tool b
 col1, col2, = st.columns(2)
 
 with col1:
-    search = st.text_input('To search', placeholder='Bob Dylan')
+    search = st.text_input('To search', placeholder='Bob Dylan').lower()
 with col2:
-    category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Labels', 'Genres'))
+    category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Labels', 'Genres')).lower()
 
-query = onto_prefix + queries['free'][category.lower()]
+query = onto_prefix + queries['free'][category]
 result = g.query(query)
-df = pd.DataFrame(result, columns=result.vars)
+df = pd.DataFrame(result, columns=result.vars, dtype=str)
 
 if search:
-    df = df[df.iloc[:, 0].str.startswith(search)]
+    df = df[df.iloc[:, 0].str.lower().str.contains(search)]
 
 st.dataframe(beautify_df(df), use_container_width=True)
