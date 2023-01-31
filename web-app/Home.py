@@ -24,4 +24,4 @@ df = pd.DataFrame(result, columns=result.vars)
 if search:
     df = df[df.iloc[:, 0].str.startswith(search)]
 
-st.dataframe(beautify_df(df))
+st.dataframe(beautify_df(df), use_container_width=True)

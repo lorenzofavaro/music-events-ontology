@@ -18,4 +18,4 @@ elif musician_type == 'Only Solists':
     result = g.query(only_solists_query)
 
 df = beautify_df(pd.DataFrame(result, columns=result.vars))
-st.dataframe(df)
+st.dataframe(df, use_container_width=True)
