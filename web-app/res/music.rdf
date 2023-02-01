@@ -76,30 +76,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#assisteA -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#assisteA">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Persona"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Evento"/>
-        <rdfs:label>assiste a</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#bandHaAlbum -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#bandHaAlbum">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#haComponente"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#haScritto"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contenutoIn"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#certifica -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#certifica">
@@ -140,41 +116,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Brano"/>
         <rdfs:label>contiene</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#distribuisce -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#distribuisce">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#distribuitoTramite"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Brano"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label>distribuisce</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#distribuitoTramite -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#distribuitoTramite">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Brano"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione"/>
-        <rdfs:label>distribuito tramite</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -480,44 +421,6 @@
     
 
 
-    <!-- http://dbpedia.org/resource/Shop -->
-
-    <owl:Class rdf:about="http://dbpedia.org/resource/Shop">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Negozio"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleFisico"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Adulto -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Adulto">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#età"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">30</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">65</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Generazione"/>
-        <rdfs:comment>Persona che ha raggiunto il pieno sviluppo fisico e psichico di età compresa tra 30 e 65 anni.</rdfs:comment>
-        <rdfs:label xml:lang="en">Adult</rdfs:label>
-        <rdfs:label xml:lang="it">Adulto</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Album -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album">
@@ -531,116 +434,6 @@
         <rdfs:comment>Raccolta di brani musicali di uno stesso artista.</rdfs:comment>
         <rdfs:label xml:lang="en">Album</rdfs:label>
         <rdfs:label xml:lang="it">Album</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#AlbumDiamante -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumDiamante">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1000000</xsd:minInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:comment>Album musicale che ha totalizzato un numero di vendite pari ad almeno 1 milione.</rdfs:comment>
-        <rdfs:label xml:lang="it">Album di Diamante</rdfs:label>
-        <rdfs:label xml:lang="en">Diamant Album</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#AlbumOro -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumOro">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">50000</xsd:minExclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">100000</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:comment>Album musicale che ha totalizzato un numero di vendite compreso tra 50 mila e 100 mila.</rdfs:comment>
-        <rdfs:label xml:lang="it">Album d&apos;Oro</rdfs:label>
-        <rdfs:label xml:lang="en">Gold Album</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#AlbumPlatino -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumPlatino">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#numeroVendite"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">100000</xsd:minExclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1000000</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:comment>Album musicale che ha totalizzato un numero di vendite compreso tra 100 mila e 1 milione.</rdfs:comment>
-        <rdfs:label xml:lang="it">Album di Platino</rdfs:label>
-        <rdfs:label xml:lang="en">Platino Album</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Anziano -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Anziano">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#età"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">65</xsd:minInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Generazione"/>
-        <rdfs:comment>Persona di età uguale o superiore a 65 anni.</rdfs:comment>
-        <rdfs:label xml:lang="it">Anziano</rdfs:label>
-        <rdfs:label xml:lang="en">Elderly</rdfs:label>
     </owl:Class>
     
 
@@ -765,57 +558,6 @@
         <rdfs:comment>Composizione vocale scritta per una o più voci perlopiù con accompagnamento strumentale.</rdfs:comment>
         <rdfs:label xml:lang="it">Brano</rdfs:label>
         <rdfs:label xml:lang="en">Song</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Radio"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Televisione"/>
-        </owl:disjointUnionOf>
-        <rdfs:comment>Un canale di distribuzione digitale è un mezzo che utilizza la tecnologia elettronica per la distribuzione di beni e servizi.</rdfs:comment>
-        <rdfs:label xml:lang="it">Canale Digitale</rdfs:label>
-        <rdfs:label xml:lang="en">Digital Channel</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#distribuisce"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-                            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Brano"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:onClass>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:comment>La distribuzione commerciale è lo strumento attraverso il quale le aziende produttrici e distributrici immettono sul mercato beni e servizi.</rdfs:comment>
-        <rdfs:label xml:lang="it">Canale di Distribuzione</rdfs:label>
-        <rdfs:label xml:lang="en">Distribution Channel</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#CanaleFisico -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleFisico">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDistribuzione"/>
-        <rdfs:comment>Un canale di distribuzione fisico è un mezzo che utilizza supporti materiali per la distribuzione di beni e servizi.</rdfs:comment>
-        <rdfs:label xml:lang="it">Canale Fisico</rdfs:label>
-        <rdfs:label xml:lang="en">Physical Channel</rdfs:label>
     </owl:Class>
     
 
@@ -1067,58 +809,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Generazione -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Generazione">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Persona"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Adulto"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Anziano"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Giovane"/>
-        </owl:disjointUnionOf>
-        <rdfs:comment xml:lang="en">A generation refers to all of the people born and living at about the same time, regarded collectively. It can also be described as, &quot;the average period, generally considered to be about 20–⁠30 years, during which children are born and grow up, become adults, and begin to have children.&quot; In kinship terminology, it is a structural term designating the parent-child relationship. It is known as biogenesis, reproduction, or procreation in the biological sciences.</rdfs:comment>
-        <rdfs:label xml:lang="en">Generation</rdfs:label>
-        <rdfs:label xml:lang="it">Generazione</rdfs:label>
-        <rdfs:seeAlso>https://dbpedia.org/page/Generation</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#GenereMusicale -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GenereMusicale">
         <rdfs:comment>Categoria convenzionale che identifica e classifica i brani e le composizioni in base a criteri di affinità.</rdfs:comment>
         <rdfs:label xml:lang="it">Genere Musicale</rdfs:label>
         <rdfs:label xml:lang="en">Music Genre</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Giovane -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Giovane">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#età"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">12</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">30</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Generazione"/>
-        <rdfs:comment>Persona di età giovanile compresa tra 12 e 30 anni.</rdfs:comment>
-        <rdfs:label xml:lang="it">Giovane</rdfs:label>
-        <rdfs:label xml:lang="en">Young</rdfs:label>
     </owl:Class>
     
 
@@ -1174,17 +870,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Negozio -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Negozio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleFisico"/>
-        <rdfs:comment xml:lang="en">Place where items or services are sold.</rdfs:comment>
-        <rdfs:label xml:lang="it">Negozio</rdfs:label>
-        <rdfs:label xml:lang="en">Shop</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Persona -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Persona">
@@ -1208,28 +893,6 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Artista"/>
         <rdfs:label xml:lang="en">Producer</rdfs:label>
         <rdfs:label xml:lang="it">Produttore</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Radio -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Radio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale"/>
-        <rdfs:comment>Un programma radiofonico o trasmissione radiofonica è un qualsiasi programma trasmesso a mezzo delle onde radio e ricevibile con degli apparecchi ricevitori.</rdfs:comment>
-        <rdfs:label xml:lang="en">Radio</rdfs:label>
-        <rdfs:label xml:lang="it">Radio</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Streaming -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale"/>
-        <rdfs:comment>I servizi di streaming sono servizi online che consentono agli utenti di guardare contenuti video o ascoltare musica in modalità &quot;streaming&quot;, ovvero senza dover prima scaricare il contenuto sul proprio dispositivo. Questi servizi sono solitamente sottoscritti tramite abbonamento mensile o annuale.</rdfs:comment>
-        <rdfs:label xml:lang="en">Streaming</rdfs:label>
-        <rdfs:label xml:lang="it">Streaming</rdfs:label>
     </owl:Class>
     
 
@@ -1352,17 +1015,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Televisione -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Televisione">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CanaleDigitale"/>
-        <rdfs:comment>Un programma televisivo (o trasmissione televisiva, o anche semplicemente programma o trasmissione quando è chiaro il contesto televisivo) è una produzione audiovisiva che può essere trasmessa tramite televisione o Internet con finalità di informazione o intrattenimento. L&apos;insieme dei programmi televisivi di un&apos;emittente televisiva è chiamato palinsesto.</rdfs:comment>
-        <rdfs:label xml:lang="en">Television</rdfs:label>
-        <rdfs:label>Televisione</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
@@ -1439,7 +1091,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
         <rdfs:label>Apple Music</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1514,8 +1165,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind">
         <music:contenutoIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Spotify"/>
         <music:haGenere rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <music:scrittoDa rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <rdfs:label>Blowin In The Wind</rdfs:label>
@@ -1655,7 +1304,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#DiscoRadio -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#DiscoRadio">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Radio"/>
         <rdfs:label>DiscoRadio</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1675,7 +1323,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#EsseStore -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#EsseStore">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Negozio"/>
         <rdfs:label>Esse Store</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1721,10 +1368,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GirlFromTheNorthCountry">
         <music:contenutoIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MTV"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RTL102.5"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Spotify"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Vevo"/>
         <music:haGenere rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <music:scrittoDa rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <rdfs:label>Girl From The North Country</rdfs:label>
@@ -1736,7 +1379,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude">
         <music:contenutoIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#AlbumHeyJude"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#AppleMusic"/>
         <music:haGenere rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <music:scrittoDa rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GeorgeHarrison"/>
         <music:scrittoDa rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#JohnLennon"/>
@@ -1780,7 +1422,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#KissTV -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#KissTV">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Televisione"/>
         <rdfs:label>Kiss TV</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1789,7 +1430,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#MTV -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#MTV">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Televisione"/>
         <rdfs:label>MTV</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1809,7 +1449,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Masters_of_War">
         <music:contenutoIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Spotify"/>
         <music:haGenere rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <music:scrittoDa rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <rdfs:label>Masters of War</rdfs:label>
@@ -1820,7 +1459,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#MediaWorld -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#MediaWorld">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Negozio"/>
         <rdfs:label>MediaWorld</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1897,7 +1535,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#RDS -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RDS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Radio"/>
         <rdfs:label>RDS</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1906,7 +1543,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#RTL102.5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RTL102.5">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Radio"/>
         <rdfs:label>RTL 102.5</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1915,7 +1551,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#RadioZeta -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RadioZeta">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Radio"/>
         <rdfs:label>RadioZeta</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1964,7 +1599,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#SoundCloud -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#SoundCloud">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
         <rdfs:label>SoundCloud</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1973,7 +1607,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Spotify -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Spotify">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
         <rdfs:label>Spotify</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1982,7 +1615,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan">
-        <music:distribuitoTramite rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Wallmart"/>
         <music:numeroVendite rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1100000</music:numeroVendite>
         <rdfs:label>The Freewheelin&apos; Bob Dylan</rdfs:label>
     </owl:NamedIndividual>
@@ -2010,7 +1642,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Vevo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Vevo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
         <rdfs:label>VEVO</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2046,7 +1677,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Wallmart -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Wallmart">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Negozio"/>
         <rdfs:label>Wallmart</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2055,7 +1685,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Youtube -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Youtube">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Streaming"/>
         <rdfs:label>Youtube</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2064,7 +1693,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/musica#4Music -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/musica#4Music">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Televisione"/>
         <rdfs:label>4Music</rdfs:label>
     </owl:NamedIndividual>
     
