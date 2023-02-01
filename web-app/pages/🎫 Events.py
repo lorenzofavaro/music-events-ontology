@@ -17,8 +17,8 @@ st.markdown('''---''')
 st.subheader('Display event details')
 event_label = st.selectbox("Select event", [row[0] for row in result])
 
-event_query = onto_prefix + queries['single']['event'].format(event_label)
-result = g.query(event_query)
+event_details_query = onto_prefix + queries['single']['event'].format(event_label)
+result = g.query(event_details_query)
 df = pd.DataFrame(result, columns=result.vars)
 df = df.replace(to_replace=core_prefix, value='', regex=True)
 event_name, start_date, end_date, attendance, event_type, manifest, tags = df.iloc[0].tolist()
@@ -35,3 +35,9 @@ with col2:
     st.write(f'**Attendance**: {attendance}')
     st.write(f'**Event Type**: {event_type}')
     st.write(f'**Tags**: {tags}')
+
+performed_songs_query = onto_prefix + queries['single']['event_songs'].format(event_label)
+result = g.query(performed_songs_query)
+
+df = beautify_df(pd.DataFrame(result, columns=result.vars))
+st.dataframe(df, use_container_width=True)
