@@ -6,7 +6,7 @@ from pandas.io.formats.style import Styler
 from rdflib import Graph
 
 hide_st_style = '<style>#MainMenu{visibility:hidden;}footer{visibility:hidden;}header{visibility:hidden;}</style>'
-g = Graph().parse('res/music-inferred2.rdf')
+g = Graph().parse('res/music-inferred.rdf')
 with open('res/queries.json') as f:
     queries = json.load(f)
 
