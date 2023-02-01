@@ -2,11 +2,9 @@ import streamlit as st
 
 from init import *
 
-all_musicians_query = onto_prefix + queries['parametrized']['musicians']
-
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Music Ontology 🎼')
-st.markdown("""---""")
+st.markdown('''---''')
 st.write('This ontology is about the music domain.')
 st.write('You can explore it through the side menu or by using the search tool below.')
 
