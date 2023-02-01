@@ -265,6 +265,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#partOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:label xml:lang="it">ha parte</rdfs:label>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasProduced -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasProduced">
@@ -386,6 +399,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#partOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+        <rdfs:label xml:lang="it">parte di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#playedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#playedBy">
@@ -449,6 +474,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#attendance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#attendance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">attendance</rdfs:comment>
+        <rdfs:label xml:lang="it">numero spettatori</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#birthDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#birthDate">
@@ -460,13 +496,46 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#eventDate -->
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#eventEndDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventDate">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventEndDate">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">event date</rdfs:comment>
-        <rdfs:label xml:lang="it">data evento</rdfs:label>
+        <rdfs:label xml:lang="it">data fine evento</rdfs:label>
+        <rdfs:label xml:lang="en">event end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#eventStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventStartDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">event start date</rdfs:comment>
+        <rdfs:label xml:lang="it">data inizio evento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#eventType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">event type</rdfs:label>
+        <rdfs:label xml:lang="it">tipo evento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#manifest -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#manifest">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label xml:lang="en">manifest</rdfs:label>
+        <rdfs:label xml:lang="it">manifesto</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -489,17 +558,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment xml:lang="en">sales count</rdfs:comment>
         <rdfs:label xml:lang="it">numero vendite</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#spectatorsCount -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#spectatorsCount">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment xml:lang="en">spectators count</rdfs:comment>
-        <rdfs:label xml:lang="it">numero spettatori</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -632,36 +690,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Concert -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Concert">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#spectatorsCount"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">500</xsd:minExclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10000</xsd:maxInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:comment>Evento musicale a cui partecipa un numero di spettatori compreso tra 500 e 10 mila.</rdfs:comment>
-        <rdfs:label xml:lang="en">Concert</rdfs:label>
-        <rdfs:label xml:lang="it">Concerto</rdfs:label>
-        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q182832</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Continent -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Continent">
@@ -727,69 +755,9 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Event -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Event">
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Concert"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Exhibition"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Festival"/>
-        </owl:disjointUnionOf>
         <rdfs:comment>Eventi temporanei e programmati, come una conferenza, un festival, una competizione o simili.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Exhibition -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Exhibition">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#spectatorsCount"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">500</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:comment>Evento musicale a cui partecipa un numero di spettatori compreso tra 10 e 500.</rdfs:comment>
-        <rdfs:label xml:lang="it">Esibizione</rdfs:label>
-        <rdfs:label xml:lang="en">Exhibition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Festival -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Festival">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#spectatorsCount"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10000</xsd:minExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:comment>Evento musicale a cui partecipa un numero di spettatori maggiore di 10 mila.</rdfs:comment>
-        <rdfs:label xml:lang="en">Festival</rdfs:label>
-        <rdfs:label xml:lang="it">Festival</rdfs:label>
     </owl:Class>
     
 
@@ -1226,6 +1194,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#BigBrother -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BigBrother">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#BlameItOnTheSun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BlameItOnTheSun">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">70000</music:salesCount>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind">
@@ -1279,8 +1268,11 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974">
         <music:hosts rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Boston"/>
-        <music:eventDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1974-01-14</music:eventDate>
-        <music:spectatorsCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8000</music:spectatorsCount>
+        <music:attendance rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8000</music:attendance>
+        <music:eventEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1974-01-20</music:eventEndDate>
+        <music:eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1974-01-14</music:eventStartDate>
+        <music:eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concert</music:eventType>
+        <music:manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.papmoon.com/media/0823564035369.jpg</music:manifest>
         <rdfs:label xml:lang="en">BostonGarden1974</rdfs:label>
         <rdfs:label xml:lang="it">BostonGarden1974</rdfs:label>
     </owl:NamedIndividual>
@@ -1378,6 +1370,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#England -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#England">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Nation"/>
+        <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Europe"/>
+        <rdfs:label xml:lang="en">England</rdfs:label>
+        <rdfs:label xml:lang="it">Inghilterra</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Europe -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Europe">
@@ -1426,6 +1429,34 @@
         <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <rdfs:label xml:lang="en">Girl From The North Country</rdfs:label>
         <rdfs:label xml:lang="it">Girl From The North Country</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010">
+        <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Somerset"/>
+        <music:attendance rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">177500</music:attendance>
+        <music:eventEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-28</music:eventEndDate>
+        <music:eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-23</music:eventStartDate>
+        <music:eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Festival</music:eventType>
+        <music:manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://modculture.typepad.com/.a/6a00d83451cbb069e20133f1a5929a970b-pi</music:manifest>
+        <rdfs:label xml:lang="en">Glastonbury2010</rdfs:label>
+        <rdfs:label xml:lang="it">Glastonbury2010</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010AcousticStage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010AcousticStage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <music:partOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
+        <music:eventEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-27</music:eventEndDate>
+        <music:eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-25</music:eventStartDate>
+        <rdfs:label xml:lang="en">Glastonbury Festival 2010: Acoustic Stage</rdfs:label>
+        <rdfs:label xml:lang="it">Glastonbury Festival 2010: Acoustic Stage</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1491,6 +1522,30 @@
         <music:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1994-03-01</music:birthDate>
         <rdfs:label xml:lang="en">Justin Bieber</rdfs:label>
         <rdfs:label xml:lang="it">Justin Bieber</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#LondonSong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LondonSong">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:label xml:lang="en">London Song</rdfs:label>
+        <rdfs:label xml:lang="it">London Song</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:label xml:lang="en">Lookin&apos; for Another Pure Love</rdfs:label>
+        <rdfs:label xml:lang="it">Lookin&apos; for Another Pure Love</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1608,6 +1663,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies">
+        <music:hostOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
+        <music:plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
+        <music:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1944-06-21</music:birthDate>
+        <rdfs:label xml:lang="en">Ray Davies</rdfs:label>
+        <rdfs:label xml:lang="it">Ray Davies</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#RhythmicGuitar -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RhythmicGuitar">
@@ -1644,8 +1711,11 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009">
         <music:hosts rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BuenosAires"/>
-        <music:eventDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-01</music:eventDate>
-        <music:spectatorsCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">200000</music:spectatorsCount>
+        <music:attendance rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">200000</music:attendance>
+        <music:eventEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-01</music:eventEndDate>
+        <music:eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-01</music:eventStartDate>
+        <music:eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concert</music:eventType>
+        <music:manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/en/6/6a/ACDC_Live_at_River_Plate.jpg</music:manifest>
         <rdfs:label xml:lang="en">RiverPlate2009</rdfs:label>
         <rdfs:label xml:lang="it">RiverPlate2009</rdfs:label>
     </owl:NamedIndividual>
@@ -1671,11 +1741,47 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Somerset -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Somerset">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#City"/>
+        <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#England"/>
+        <rdfs:label xml:lang="en">Somerset</rdfs:label>
+        <rdfs:label xml:lang="it">Somerset</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#SouthAmerica -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#SouthAmerica">
         <rdfs:label xml:lang="en">South America</rdfs:label>
         <rdfs:label xml:lang="it">Sud America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder">
+        <music:hostOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
+        <music:plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pianoforte"/>
+        <music:plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
+        <music:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1950-05-13</music:birthDate>
+        <rdfs:label xml:lang="en">Stevie Wonder</rdfs:label>
+        <rdfs:label xml:lang="it">Stevie Wonder</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1972-10-27</music:releaseDate>
+        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">150000</music:salesCount>
+        <rdfs:label xml:lang="en">Talking Book</rdfs:label>
+        <rdfs:label xml:lang="it">Talking Book</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1687,6 +1793,30 @@
         <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1100000</music:salesCount>
         <rdfs:label xml:lang="en">The Freewheelin&apos; Bob Dylan</rdfs:label>
         <rdfs:label xml:lang="it">The Freewheelin&apos; Bob Dylan</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1998-04-21</music:releaseDate>
+        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">70000</music:salesCount>
+        <rdfs:label xml:lang="en">The Storyteller</rdfs:label>
+        <rdfs:label xml:lang="it">The Storyteller</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:label xml:lang="en">Tired of Waiting</rdfs:label>
+        <rdfs:label xml:lang="it">Tired of Waiting</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1718,6 +1848,18 @@
         <music:locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica"/>
         <rdfs:label xml:lang="it">Stati Uniti d&apos;America</rdfs:label>
         <rdfs:label xml:lang="en">USA</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Victoria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Victoria">
+        <music:containedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <music:hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
+        <music:writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:label xml:lang="en">Victoria</rdfs:label>
+        <rdfs:label xml:lang="it">Victoria</rdfs:label>
     </owl:NamedIndividual>
     
 
