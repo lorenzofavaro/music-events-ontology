@@ -15,7 +15,7 @@ with col1:
 with col2:
     category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Labels', 'Genres')).lower()
 
-query = onto_prefix + queries['free'][category]
+query = onto_prefix + queries['list'][category]
 result = g.query(query)
 df = pd.DataFrame(result, columns=result.vars, dtype=str)
 

@@ -3,7 +3,7 @@ import streamlit as st
 from init import *
 
 # Events List
-events_query = onto_prefix + queries['free']['events']
+events_query = onto_prefix + queries['list']['events']
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Events 🎫')

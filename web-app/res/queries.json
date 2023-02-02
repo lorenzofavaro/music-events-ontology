@@ -1,6 +1,6 @@
 {
   "prefix": "PREFIX music: <http://www.semanticweb.org/lorenzo/ontologies/music#>",
-  "free": {
+  "list": {
     "musicians": "SELECT ?Musician ?Birth_Date (group_concat(?SubClass; separator=\", \") as ?Type) ?Band WHERE { ?MusicianItem a ?SubClass. ?MusicianItem rdfs:label ?Musician. FILTER(LANG(?Musician) = \"en\"). OPTIONAL { ?MusicianItem music:birthDate ?Birth_Date . } OPTIONAL {?BandItem rdfs:label ?Band. FILTER(LANG(?Band) = \"en\"). ?BandItem music:hasComponent ?MusicianItem .} FILTER(?SubClass != music:Musician && EXISTS{ ?SubClass rdfs:subClassOf music:Musician})} group by ?Musician ?Birth_Date ?Band",
     "musicians_only_bands": "SELECT ?Musician ?Birth_Date ?Band WHERE { ?Band music:hasComponent ?Musician . OPTIONAL {?Musician music:birthDate ?Birth_Date}} ORDER BY ?Band",
     "musicians_only_solists": "SELECT ?Musician ?Birth_Date (group_concat(?SubClass; separator=\", \") as ?Type) WHERE { ?Musician a ?SubClass. OPTIONAL { ?Musician music:birthDate ?Birth_Date . } OPTIONAL {?Band music:hasComponent ?Musician .} FILTER(NOT EXISTS { ?Musician music:componentOf ?Band } && ?SubClass != music:Musician && EXISTS{ ?SubClass rdfs:subClassOf music:Musician})} group by ?Musician ?Birth_Date",

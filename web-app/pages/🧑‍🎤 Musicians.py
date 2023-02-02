@@ -2,9 +2,9 @@ import streamlit as st
 
 from init import *
 
-all_musicians_query = onto_prefix + queries['free']['musicians']
-only_bands_query = onto_prefix + queries['free']['musicians_only_bands']
-only_solists_query = onto_prefix + queries['free']['musicians_only_solists']
+all_musicians_query = onto_prefix + queries['list']['musicians']
+only_bands_query = onto_prefix + queries['list']['musicians_only_bands']
+only_solists_query = onto_prefix + queries['list']['musicians_only_solists']
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Musicians 🧑‍🎤')

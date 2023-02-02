@@ -2,7 +2,7 @@ import streamlit as st
 
 from init import *
 
-record_company_query = onto_prefix + queries['free']['labels']
+record_company_query = onto_prefix + queries['list']['labels']
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Labels 👥')
