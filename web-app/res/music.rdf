@@ -265,19 +265,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasPart -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasPart">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#partOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:label xml:lang="it">ha parte</rdfs:label>
-        <rdfs:label xml:lang="en">has part</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasProduced -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasProduced">
@@ -393,6 +380,10 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasSongPerformed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#writtenBy"/>
+        </owl:propertyChainAxiom>
         <rdfs:label xml:lang="en">hosts</rdfs:label>
         <rdfs:label xml:lang="it">ospita</rdfs:label>
     </owl:ObjectProperty>
@@ -414,18 +405,6 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <rdfs:label xml:lang="en">located in</rdfs:label>
         <rdfs:label xml:lang="it">situato in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#partOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#partOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:label xml:lang="it">parte di</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1562,19 +1541,6 @@
         <music:manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://modculture.typepad.com/.a/6a00d83451cbb069e20133f1a5929a970b-pi</music:manifest>
         <rdfs:label xml:lang="en">Glastonbury2010</rdfs:label>
         <rdfs:label xml:lang="it">Glastonbury2010</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010AcousticStage -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010AcousticStage">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <music:partOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
-        <music:eventEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-27</music:eventEndDate>
-        <music:eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-25</music:eventStartDate>
-        <rdfs:label xml:lang="en">Glastonbury Festival 2010: Acoustic Stage</rdfs:label>
-        <rdfs:label xml:lang="it">Glastonbury Festival 2010: Acoustic Stage</rdfs:label>
     </owl:NamedIndividual>
     
 
