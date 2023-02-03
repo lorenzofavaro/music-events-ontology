@@ -1689,7 +1689,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica">
         <rdfs:label xml:lang="it">Nord America</rdfs:label>
-        <rdfs:label xml:lang="en">NorthAmerica</rdfs:label>
+        <rdfs:label xml:lang="en">North America</rdfs:label>
     </owl:NamedIndividual>
     
 
