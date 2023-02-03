@@ -5,7 +5,9 @@ from init import *
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Music Ontology 🎼')
 st.markdown('''---''')
-st.write('This ontology is about the music domain.')
+st.write('This musical ontology focuses primarily on the realm of **events**. '
+         'It is possible to search and view the events and the relative artists present and songs performed. '
+         'It is also possible to filter by event size and also by tags (music genres) associated with it.')
 st.write('You can explore it through the side menu or by using the search tool below.')
 
 col1, col2, = st.columns(2)
