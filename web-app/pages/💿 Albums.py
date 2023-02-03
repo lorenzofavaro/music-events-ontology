@@ -1,5 +1,3 @@
-import streamlit as st
-
 from init import *
 
 albums_query = onto_prefix + queries['list']['albums']

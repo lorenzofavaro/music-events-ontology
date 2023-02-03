@@ -1,5 +1,3 @@
-import streamlit as st
-
 from init import *
 
 all_musicians_query = onto_prefix + queries['list']['musicians']
