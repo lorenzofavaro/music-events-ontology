@@ -1,5 +1,3 @@
-import streamlit as st
-
 from init import *
 
 music_genres_query = onto_prefix + queries['list']['genres']

@@ -1,5 +1,3 @@
-import streamlit as st
-
 from init import *
 
 record_company_query = onto_prefix + queries['list']['labels']

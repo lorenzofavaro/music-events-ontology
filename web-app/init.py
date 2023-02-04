@@ -1,6 +1,7 @@
 import json
 import re
 
+import streamlit as st
 import pandas as pd
 from pandas.io.formats.style import Styler
 from rdflib import Graph
