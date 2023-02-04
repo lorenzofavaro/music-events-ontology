@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/lorenzo/ontologies/music"
      xml:base="http://www.semanticweb.org/lorenzo/ontologies/music"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -13,6 +14,16 @@
      xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music">
         <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl"/>
+        <dc:creator>Lorenzo Favaro</dc:creator>
+        <dc:date>2023-01-25</dc:date>
+        <dc:description xml:lang="it">Questa ontologia descrive il mondo musicale, rivolgendosi agli eventi musicali con particolare enfasi.</dc:description>
+        <dc:description xml:lang="en">This ontology describes the musical world, addressing musical events with special emphasis.</dc:description>
+        <dc:title xml:lang="it">Mondo Musicale</dc:title>
+        <dc:title xml:lang="en">Music World</dc:title>
+        <music:preferredNamespacePrefix>music</music:preferredNamespacePrefix>
+        <music:preferredNamespaceUri>http://www.semanticweb.org/lorenzo/ontologies/music#</music:preferredNamespaceUri>
+        <rdfs:label xml:lang="en">Music</rdfs:label>
+        <rdfs:label xml:lang="it">Musica</rdfs:label>
     </owl:Ontology>
     
 
@@ -28,9 +39,45 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
     <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
 
     <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#preferredNamespaceUri"/>
     
 
 
