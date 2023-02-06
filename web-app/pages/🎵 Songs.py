@@ -8,7 +8,7 @@ def filtered_query(genre):
 
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
-category_filters = ['Song', 'Composer', 'Album']
+category_filters = ['Song', 'Album', 'Composer']
 genre_filters = ['', 'Pop', 'Rock', 'Folk', 'Jazz']
 st.title('Songs 🎵')
 
@@ -23,6 +23,7 @@ result = g.query(filtered_query(genre))
 df = pd.DataFrame(result, columns=result.vars)
 
 if search:
+    df.dropna(inplace=True)
     df = df[df.iloc[:, category_filters.index(category)].str.lower().str.contains(search)]
 
 st.dataframe(beautify_df(df), use_container_width=True)
