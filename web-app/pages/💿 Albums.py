@@ -23,6 +23,6 @@ result = g.query(filtered_query(certification))
 df = pd.DataFrame(result, columns=result.vars)
 
 if search:
-    df = df[df.iloc[:, filters.index(filter)].str.lower().str.contains(search)]
+    df = df[df.iloc[:, category_filters.index(filter)].str.lower().str.contains(search)]
 
 st.dataframe(beautify_df(df), use_container_width=True)

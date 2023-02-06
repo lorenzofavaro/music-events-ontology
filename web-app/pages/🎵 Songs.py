@@ -24,6 +24,6 @@ df = pd.DataFrame(result, columns=result.vars)
 
 if search:
     df.dropna(inplace=True)
-    df = df[df.iloc[:, category_filters.index(category)].str.lower().str.contains(search)]
+    df = df[df.iloc[:, category_filters.index(category)].str.lower().str.contains(search, na=False)]
 
 st.dataframe(beautify_df(df), use_container_width=True)
