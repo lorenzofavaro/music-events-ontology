@@ -301,7 +301,6 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasEvent -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasEvent">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Festival"/>
         <rdfs:label xml:lang="it">ha evento</rdfs:label>
         <rdfs:label xml:lang="en">has event</rdfs:label>
     </owl:ObjectProperty>
@@ -702,7 +701,7 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="en">Big Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento Grande</rdfs:label>
     </owl:Class>
@@ -732,16 +731,6 @@
         <rdfs:label xml:lang="it">Città</rdfs:label>
         <rdfs:label xml:lang="en">City</rdfs:label>
         <rdfs:seeAlso>https://www.wikidata.org/wiki/Q515</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Concert -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Concert">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventType"/>
-        <rdfs:label xml:lang="en">Concert</rdfs:label>
-        <rdfs:label xml:lang="it">Concerto</rdfs:label>
     </owl:Class>
     
 
@@ -814,36 +803,6 @@
         <rdfs:comment>Eventi temporanei e programmati, come una conferenza, un festival, una competizione o simili.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:label xml:lang="it">Dimensione Evento</rdfs:label>
-        <rdfs:label xml:lang="en">Event Dimension</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#EventType -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#EventType">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:label xml:lang="en">Event Type</rdfs:label>
-        <rdfs:label xml:lang="it">Tipo Evento</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Festival -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Festival">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventType"/>
-        <rdfs:label xml:lang="en">Festival</rdfs:label>
-        <rdfs:label xml:lang="it">Festival</rdfs:label>
     </owl:Class>
     
 
@@ -974,7 +933,7 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="it">Evento Medio</rdfs:label>
         <rdfs:label xml:lang="en">Medium Event</rdfs:label>
     </owl:Class>
@@ -1113,7 +1072,7 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="it">Evento Piccolo</rdfs:label>
         <rdfs:label xml:lang="en">Small Event</rdfs:label>
     </owl:Class>

@@ -1068,7 +1068,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="en">Big Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento Grande</rdfs:label>
     </owl:Class>
@@ -1170,16 +1170,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdfs:comment>Eventi temporanei e programmati, come una conferenza, un festival, una competizione o simili.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdfs:label xml:lang="it">Dimensione Evento</rdfs:label>
-        <rdfs:label xml:lang="en">Event Dimension</rdfs:label>
     </owl:Class>
     
 
@@ -1310,7 +1300,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="it">Evento Medio</rdfs:label>
         <rdfs:label xml:lang="en">Medium Event</rdfs:label>
     </owl:Class>
@@ -1449,7 +1439,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:label xml:lang="it">Evento Piccolo</rdfs:label>
         <rdfs:label xml:lang="en">Small Event</rdfs:label>
     </owl:Class>
@@ -1792,7 +1782,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MediumEvent"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
@@ -2062,7 +2051,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BigEvent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
@@ -2783,7 +2771,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BigEvent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventDimension"/>
         <eventHasTag rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GoDown"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Overdose"/>
