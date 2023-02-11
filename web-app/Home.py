@@ -1,7 +1,8 @@
 from init import *
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
-st.title('Music Ontology 🎼')
+
+st.title('Music & Events 🎼')
 st.markdown('''---''')
 st.write('This musical ontology focuses primarily on the realm of **events**. '
          'It is possible to search and view the events and the relative artists present and songs performed. '
