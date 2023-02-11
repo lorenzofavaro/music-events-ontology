@@ -536,16 +536,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#containsPerformance -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#containsPerformance">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
-        <rdfs:label xml:lang="it">contiene performance</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#containsSong -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#containsSong">
