@@ -21,12 +21,12 @@
         <dc:date>2023-01-25</dc:date>
         <dc:description xml:lang="it">Questa ontologia descrive il mondo musicale, rivolgendosi agli eventi musicali con particolare enfasi.</dc:description>
         <dc:description xml:lang="en">This ontology describes the musical world, addressing musical events with special emphasis.</dc:description>
-        <dc:title xml:lang="it">Mondo Musicale</dc:title>
-        <dc:title xml:lang="en">Music World</dc:title>
+        <dc:title xml:lang="it">Mondo Musicale &amp; Eventi</dc:title>
+        <dc:title xml:lang="en">Music &amp; Events World</dc:title>
         <music:preferredNamespacePrefix>music</music:preferredNamespacePrefix>
         <music:preferredNamespaceUri>http://www.semanticweb.org/lorenzo/ontologies/music#</music:preferredNamespaceUri>
-        <rdfs:label xml:lang="en">Music</rdfs:label>
-        <rdfs:label xml:lang="it">Musica</rdfs:label>
+        <rdfs:label xml:lang="en">Music &amp; Events</rdfs:label>
+        <rdfs:label xml:lang="it">Musica ed Eventi</rdfs:label>
     </owl:Ontology>
     
 
