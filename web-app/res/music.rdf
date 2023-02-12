@@ -330,6 +330,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasEventPlaced -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasEventPlaced">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#takePlaceAt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:label xml:lang="en">hosts event</rdfs:label>
+        <rdfs:label xml:lang="it">ospita evento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre">
@@ -337,6 +349,18 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
         <rdfs:label xml:lang="it">ha genere</rdfs:label>
         <rdfs:label xml:lang="en">has genre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasLocation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#locatedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
+        <rdfs:label xml:lang="it">contiene location</rdfs:label>
+        <rdfs:label xml:lang="en">has location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -453,7 +477,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <rdfs:label xml:lang="en">located in</rdfs:label>
-        <rdfs:label xml:lang="it">situato in</rdfs:label>
+        <rdfs:label xml:lang="it">situata in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -907,8 +931,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:label xml:lang="en">Event Location</rdfs:label>
-        <rdfs:label xml:lang="it">Luogo Evento</rdfs:label>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:label xml:lang="it">Location</rdfs:label>
     </owl:Class>
     
 
@@ -1166,11 +1190,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Place">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#locatedIn"/>
-                    </rdf:Description>
-                </owl:onProperty>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasLocation"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -1246,6 +1266,19 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Song -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Song">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#writtenBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:comment>Composizione vocale scritta per una o più voci perlopiù con accompagnamento strumentale.</rdfs:comment>
         <rdfs:label xml:lang="it">Brano</rdfs:label>
         <rdfs:label xml:lang="en">Song</rdfs:label>
