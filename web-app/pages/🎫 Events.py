@@ -11,7 +11,7 @@ def filtered_query(dimension, tag):
 single_event_query = onto_prefix + queries['single']['event']
 single_event_songs_query = onto_prefix + queries['single']['event_songs']
 
-genres = ['Folk', 'Rock', 'Jazz', 'Pop']
+tags = ['', 'Folk', 'Rock', 'Jazz', 'Pop']
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 st.title('Events 🎫')
@@ -20,7 +20,7 @@ col1, col2 = st.columns(2)
 with col1:
     dimension_filter = st.selectbox('Dimensions', ['', 'Small', 'Medium', 'Big'])
 with col2:
-    tag_filter = st.selectbox('Tags', [''] + [row[0].replace(core_prefix, '') for row in genres])
+    tag_filter = st.selectbox('Tags', tags)
 result = g.query(filtered_query(dimension_filter, tag_filter))
 
 df = beautify_df(pd.DataFrame(result, columns=result.vars))
