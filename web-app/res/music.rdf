@@ -388,28 +388,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasTag -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasTag">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasWritten"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
-        </owl:propertyChainAxiom>
-        <rdfs:label xml:lang="it">ha tag</rdfs:label>
-        <rdfs:label xml:lang="en">has tag</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#hasWritten -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasWritten">
