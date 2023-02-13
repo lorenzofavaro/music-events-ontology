@@ -2,7 +2,7 @@ from init import *
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-st.title('Music & Events 🎼')
+st.title('🥁 Music & Events 🎸')
 st.markdown('''---''')
 st.write('This musical ontology focuses primarily on the realm of **events**. '
          'It is possible to search and view the events and the relative artists present and songs performed. '
@@ -12,9 +12,9 @@ st.write('You can explore it through the side menu or by using the search tool b
 col1, col2, = st.columns(2)
 
 with col1:
-    search = st.text_input('To search', placeholder='Bob Dylan').lower()
+    search = st.text_input('To search', placeholder='Glastonbury').lower()
 with col2:
-    category = st.selectbox('Category', ('Musicians', 'Songs', 'Albums', 'Events', 'Labels', 'Genres')).lower()
+    category = st.selectbox('Category', ('Events', 'Musicians', 'Songs', 'Albums', 'Labels', 'Genres')).lower()
 
 query = onto_prefix + queries['list'][category]
 result = g.query(query)
