@@ -1,5 +1,5 @@
 {
-  "prefix": "PREFIX music: <http://www.semanticweb.org/lorenzo/ontologies/2023/1/music#>",
+  "prefix": "PREFIX music: <http://www.semanticweb.org/lorenzo/ontologies/music#>",
   "list": {
     "musicians": "SELECT ?Musician ?Birth_Date (group_concat(?SubClass; separator=\", \") as ?Type) ?Band WHERE { ?MusicianItem a ?SubClass. ?MusicianItem rdfs:label ?Musician. ?MusicianItem music:birthDate ?Birth_Date. ?SubClass rdfs:subClassOf music:Musician. OPTIONAL {?BandItem rdfs:label ?Band. FILTER(LANG(?Band) = \"en\"). ?BandItem music:hasComponent ?MusicianItem .} FILTER(LANG(?Musician) = \"en\") } GROUP BY ?Musician ?Birth_Date ?Band",
     "musicians_only_bands": "SELECT ?Musician ?Birth_Date ?Band WHERE { ?BandItem music:hasComponent ?MusicianItem. ?MusicianItem music:birthDate ?Birth_Date. ?BandItem rdfs:label ?Band. ?MusicianItem rdfs:label ?Musician. FILTER(LANG(?Band) = \"en\" && LANG(?Musician) = \"en\")\n} ORDER BY ?Band",
