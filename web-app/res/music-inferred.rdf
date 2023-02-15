@@ -244,8 +244,6 @@ It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment
         <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
         <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
         <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item - The link to every item of the Bag</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -448,10 +446,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#albumHasGenre">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
-        </owl:propertyChainAxiom>
         <rdfs:comment xml:lang="it">album ha genere musicale</rdfs:comment>
         <rdfs:comment xml:lang="en">album has musical genre</rdfs:comment>
         <rdfs:label xml:lang="it">album ha genere</rdfs:label>
@@ -485,6 +479,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#belongsToEvent">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasPerformance"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:comment xml:lang="it">la performance appartiene all&apos;evento</rdfs:comment>
@@ -520,34 +515,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdfs:comment xml:lang="en">the musician is a member of the band</rdfs:comment>
         <rdfs:label xml:lang="en">component of</rdfs:label>
         <rdfs:label xml:lang="it">componente di</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#containedIn -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#containedIn">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:comment xml:lang="it">la traccia è contenuta nell&apos;album</rdfs:comment>
-        <rdfs:comment xml:lang="en">the track is contained in the album</rdfs:comment>
-        <rdfs:label xml:lang="en">contained in</rdfs:label>
-        <rdfs:label xml:lang="it">contenuto in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#contains -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
-        <rdfs:comment xml:lang="it">l&apos;album contiene la traccia</rdfs:comment>
-        <rdfs:comment xml:lang="en">the album contains the track</rdfs:comment>
-        <rdfs:label xml:lang="en">contains</rdfs:label>
-        <rdfs:label xml:lang="it">contiene</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -817,6 +784,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#performanceBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#performanceBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range>
             <owl:Class>
@@ -1129,7 +1097,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
             </owl:Restriction>
@@ -2789,6 +2757,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OldBrownShoe"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
@@ -2814,6 +2784,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DontLetMeDown"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
@@ -2839,6 +2811,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheBalladOfJohnAndYoko"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
@@ -2864,6 +2838,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CantBuyMeLove"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
@@ -2941,6 +2917,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GirlsGotRhythm"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
@@ -2966,6 +2944,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WalkAllOverYou"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
@@ -2991,6 +2971,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TouchTooMuch"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
@@ -3016,6 +2998,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BeatingAroundTheBush"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
@@ -3256,6 +3240,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DogEatDog"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
@@ -3283,6 +3269,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
@@ -3310,6 +3298,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BadBoyBoogie"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
@@ -3337,6 +3327,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Overdose"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
@@ -3364,6 +3356,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CrabsodyInBlue"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
@@ -3391,6 +3385,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HellAintABadPlaceToBe"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
@@ -4213,6 +4209,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BigBrother"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
@@ -4239,6 +4237,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlameItOnTheSun"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
@@ -4265,6 +4265,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
@@ -4291,6 +4293,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#IBelieve"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
@@ -4317,6 +4321,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#YouAreTheSunshineOfMyLife"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
@@ -4396,6 +4402,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
@@ -4421,6 +4429,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MastersOfWar"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
@@ -4446,6 +4456,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DownTheHighway"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
@@ -4471,6 +4483,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OxfordTown"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
@@ -4548,6 +4562,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
@@ -4573,6 +4589,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Victoria"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
@@ -4598,6 +4616,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MyName"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
@@ -4623,6 +4643,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <bag:itemContent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#20thCenturyMan"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
         <list:nextItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
         <list:previousItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <sequence:directlyFollows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
@@ -4683,6 +4705,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
@@ -4727,6 +4754,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
@@ -4757,6 +4788,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
@@ -5087,6 +5122,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
@@ -5117,6 +5156,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
@@ -5149,6 +5192,12 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
@@ -5173,11 +5222,95 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item - The link to every item of the Bag</rdfs:comment>
+    </rdf:Description>
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest">
         <rdfs:comment>This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf">
         <rdfs:comment>This annotation property is used for referring a cloned ontology entity to its cloning source.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
+        </owl:distinctMembers>
     </rdf:Description>
     
 

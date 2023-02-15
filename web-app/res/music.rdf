@@ -146,10 +146,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#albumHasGenre">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
-        </owl:propertyChainAxiom>
         <rdfs:comment xml:lang="it">album ha genere musicale</rdfs:comment>
         <rdfs:comment xml:lang="en">album has musical genre</rdfs:comment>
         <rdfs:label xml:lang="it">album ha genere</rdfs:label>
@@ -183,6 +179,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#belongsToEvent">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasPerformance"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:comment xml:lang="it">la performance appartiene all&apos;evento</rdfs:comment>
@@ -218,34 +215,6 @@
         <rdfs:comment xml:lang="en">the musician is a member of the band</rdfs:comment>
         <rdfs:label xml:lang="en">component of</rdfs:label>
         <rdfs:label xml:lang="it">componente di</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#containedIn -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#containedIn">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:comment xml:lang="it">la traccia è contenuta nell&apos;album</rdfs:comment>
-        <rdfs:comment xml:lang="en">the track is contained in the album</rdfs:comment>
-        <rdfs:label xml:lang="en">contained in</rdfs:label>
-        <rdfs:label xml:lang="it">contenuto in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/lorenzo/ontologies/music#contains -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
-        <rdfs:comment xml:lang="it">l&apos;album contiene la traccia</rdfs:comment>
-        <rdfs:comment xml:lang="en">the album contains the track</rdfs:comment>
-        <rdfs:label xml:lang="en">contains</rdfs:label>
-        <rdfs:label xml:lang="it">contiene</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -515,6 +484,7 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#performanceBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#performanceBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range>
             <owl:Class>
@@ -758,7 +728,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Album">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
             </owl:Restriction>
@@ -3414,17 +3384,16 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
-        <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
-        <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
-        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1972-10-27</music:releaseDate>
-        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">150000</music:salesCount>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
+        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
+        <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
+        <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1972-10-27</music:releaseDate>
+        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">150000</music:salesCount>
         <rdfs:comment xml:lang="it">Album musicale appartenente a Stevie Wonder.</rdfs:comment>
         <rdfs:comment xml:lang="en">Music album belonging to Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Talking Book</rdfs:label>
@@ -3449,15 +3418,15 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TheFreewheelinBobDylan">
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
         <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1963-05-27</music:releaseDate>
         <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1100000</music:salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <rdfs:comment xml:lang="it">Album musicale appartenente a Bob Dylan.</rdfs:comment>
         <rdfs:comment xml:lang="en">Music album belonging to Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">The Freewheelin&apos; Bob Dylan</rdfs:label>
@@ -3469,16 +3438,15 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
         <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1998-04-21</music:releaseDate>
         <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">70000</music:salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <rdfs:comment xml:lang="it">Album musicale appartenente a Ray Davies.</rdfs:comment>
         <rdfs:comment xml:lang="en">Music album belonging to Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">The Storyteller</rdfs:label>
@@ -3740,15 +3708,15 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude! -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!">
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
         <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1970-02-26</music:releaseDate>
         <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8000000</music:salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <rdfs:comment xml:lang="it">Album musicale appartenente ai Beatles.</rdfs:comment>
         <rdfs:comment xml:lang="en">Music album belonging to the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Hey Jude!</rdfs:label>
@@ -3760,15 +3728,15 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell! -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!">
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
         <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1979-07-29</music:releaseDate>
         <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9396928</music:salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <rdfs:comment xml:lang="it">Album musicale appartenente agli AC/DC.</rdfs:comment>
         <rdfs:comment xml:lang="en">Music album belonging to the AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Highway to Hell!</rdfs:label>
@@ -3780,18 +3748,17 @@
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock! -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
-        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
-        <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
-        <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
-        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1977-03-21</music:releaseDate>
-        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3119941</music:salesCount>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
+        <list:hasFirstItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
+        <list:hasLastItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
+        <music:albumOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <music:releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1977-03-21</music:releaseDate>
+        <music:salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3119941</music:salesCount>
         <rdfs:comment xml:lang="en">1977 studio album by AC/DC.</rdfs:comment>
         <rdfs:comment xml:lang="it">Album degli AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Let There Be Rock!</rdfs:label>
@@ -3812,6 +3779,86 @@
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
         <rdfs:label xml:lang="it">Musica</rdfs:label>
         <rdfs:label xml:lang="en">Music</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
+        </owl:distinctMembers>
     </rdf:Description>
     
 
