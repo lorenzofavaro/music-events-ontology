@@ -762,11 +762,11 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasComponent"/>
                         <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasComponent"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
                         <owl:onClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
                     </owl:Restriction>
@@ -3771,26 +3771,30 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <rdfs:label xml:lang="it">Musica</rdfs:label>
-        <rdfs:label xml:lang="en">Music</rdfs:label>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AngusYoung"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BonScott"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BrianJohnson"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#MalcolmYoung"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#PhilRudd"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GeorgeHarrison"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#JohnLennon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#PaulMcCartney"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RingoStarr"/>
+        </owl:distinctMembers>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
