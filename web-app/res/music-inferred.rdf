@@ -1031,6 +1031,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://dbpedia.org/resource/Album">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
     </owl:Class>
     
 
@@ -1039,6 +1042,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bag - Collection that can have a number of copies of each object</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(collections) Bag</rdfs:label>
     </owl:Class>
@@ -1056,6 +1062,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item - Element belonging to a Bag</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">item</rdfs:label>
     </owl:Class>
@@ -1065,6 +1074,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection">
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:comment>Any container for entities that share one or more common properties. E.g. &quot;stone objects&quot;, &quot;the nurses&quot;, &quot;the Louvre Aegyptian collection&quot;. A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl"/>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
@@ -1076,6 +1087,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">List - An ordered array of items, that can be present in multiple copies</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">list</rdfs:label>
     </owl:Class>
@@ -1086,6 +1099,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ListItem - Element belonging to a list</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">list item</rdfs:label>
     </owl:Class>
@@ -1103,6 +1118,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:comment xml:lang="en">Collection of songs by the same musician/band.</rdfs:comment>
         <rdfs:comment xml:lang="it">Raccolta di brani musicali di uno stesso musicista/band.</rdfs:comment>
         <rdfs:label xml:lang="en">Album</rdfs:label>
@@ -1132,11 +1148,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasComponent"/>
                         <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasComponent"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
                         <owl:onClass rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
                     </owl:Restriction>
@@ -1144,6 +1160,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:comment xml:lang="it">Collettivo di almeno 2 musicisti.</rdfs:comment>
         <rdfs:comment xml:lang="en">Group of at least 2 musicians.</rdfs:comment>
         <rdfs:label xml:lang="en">Band</rdfs:label>
@@ -1440,6 +1457,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PercussionInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
         <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la pressione di tasti o pulsanti, che azionano meccanismi interni che producono il suono.</rdfs:comment>
         <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by pressing keys or buttons, which operate internal mechanisms that produce sound.</rdfs:comment>
         <rdfs:label xml:lang="en">Keyboard Instrument</rdfs:label>
@@ -1562,6 +1582,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
         <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la percussione o il colpo di un oggetto.</rdfs:comment>
         <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by striking or striking an object.</rdfs:comment>
         <rdfs:label xml:lang="en">Percussion Instrument</rdfs:label>
@@ -1742,6 +1764,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
         <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la vibrazione delle corde.</rdfs:comment>
         <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by vibrating strings.</rdfs:comment>
         <rdfs:label xml:lang="en">Stringed Instrument</rdfs:label>
@@ -5243,6 +5266,25 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#AngusYoung"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BonScott"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#BrianJohnson"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#MalcolmYoung"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#PhilRudd"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GeorgeHarrison"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#JohnLennon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#PaulMcCartney"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#RingoStarr"/>
+        </owl:distinctMembers>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
