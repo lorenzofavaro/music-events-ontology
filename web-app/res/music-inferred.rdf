@@ -244,6 +244,8 @@ It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment
         <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
         <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
         <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item - The link to every item of the Bag</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -450,6 +452,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">album ha genere musicale</rdfs:comment>
+        <rdfs:comment xml:lang="en">album has musical genre</rdfs:comment>
         <rdfs:label xml:lang="it">album ha genere</rdfs:label>
         <rdfs:label xml:lang="en">album has genre</rdfs:label>
     </owl:ObjectProperty>
@@ -469,6 +473,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:comment xml:lang="it">album appartiene a musicista/band</rdfs:comment>
+        <rdfs:comment xml:lang="en">album belongs to musician/band</rdfs:comment>
         <rdfs:label xml:lang="it">album di</rdfs:label>
         <rdfs:label xml:lang="en">album of</rdfs:label>
     </owl:ObjectProperty>
@@ -481,6 +487,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasPerformance"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="it">la performance appartiene all&apos;evento</rdfs:comment>
+        <rdfs:comment xml:lang="en">the performance belongs to the event</rdfs:comment>
         <rdfs:label xml:lang="it">appartiene a evento</rdfs:label>
         <rdfs:label xml:lang="en">belongs to event</rdfs:label>
     </owl:ObjectProperty>
@@ -493,6 +501,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasCertification"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <rdfs:comment xml:lang="en">certification certifies album</rdfs:comment>
+        <rdfs:comment xml:lang="it">la certificazione certifica album</rdfs:comment>
         <rdfs:label xml:lang="it">certifica</rdfs:label>
         <rdfs:label xml:lang="en">certifies</rdfs:label>
     </owl:ObjectProperty>
@@ -506,6 +516,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasComponent"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
+        <rdfs:comment xml:lang="it">il musicista è membro della band</rdfs:comment>
+        <rdfs:comment xml:lang="en">the musician is a member of the band</rdfs:comment>
         <rdfs:label xml:lang="en">component of</rdfs:label>
         <rdfs:label xml:lang="it">componente di</rdfs:label>
     </owl:ObjectProperty>
@@ -519,6 +531,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <rdfs:comment xml:lang="it">la traccia è contenuta nell&apos;album</rdfs:comment>
+        <rdfs:comment xml:lang="en">the track is contained in the album</rdfs:comment>
         <rdfs:label xml:lang="en">contained in</rdfs:label>
         <rdfs:label xml:lang="it">contenuto in</rdfs:label>
     </owl:ObjectProperty>
@@ -530,6 +544,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#contains">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
+        <rdfs:comment xml:lang="it">l&apos;album contiene la traccia</rdfs:comment>
+        <rdfs:comment xml:lang="en">the album contains the track</rdfs:comment>
         <rdfs:label xml:lang="en">contains</rdfs:label>
         <rdfs:label xml:lang="it">contiene</rdfs:label>
     </owl:ObjectProperty>
@@ -542,6 +558,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Track"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
+        <rdfs:comment xml:lang="it">la traccia contiene il brano</rdfs:comment>
+        <rdfs:comment xml:lang="en">the track contains the song</rdfs:comment>
         <rdfs:label xml:lang="en">contains song</rdfs:label>
         <rdfs:label xml:lang="it">contiene brano</rdfs:label>
     </owl:ObjectProperty>
@@ -561,6 +579,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
+        <rdfs:comment xml:lang="en">band/musician does the performance</rdfs:comment>
+        <rdfs:comment xml:lang="it">band/musicista compie la performance</rdfs:comment>
         <rdfs:label xml:lang="en">do perform</rdfs:label>
         <rdfs:label xml:lang="it">performa</rdfs:label>
     </owl:ObjectProperty>
@@ -577,6 +597,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasSongPerformed"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">l&apos;evento ha il genere (tag)</rdfs:comment>
+        <rdfs:comment xml:lang="en">the event has the genre (tag)</rdfs:comment>
         <rdfs:label xml:lang="en">event has tag</rdfs:label>
         <rdfs:label xml:lang="it">evento ha tag</rdfs:label>
     </owl:ObjectProperty>
@@ -589,6 +611,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
+        <rdfs:comment xml:lang="en">is the genre of the song</rdfs:comment>
+        <rdfs:comment xml:lang="it">è il genere del brano</rdfs:comment>
         <rdfs:label xml:lang="it">genere del brano</rdfs:label>
         <rdfs:label xml:lang="en">genre of song</rdfs:label>
     </owl:ObjectProperty>
@@ -607,6 +631,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
+        <rdfs:comment xml:lang="en">band/musician has the album</rdfs:comment>
+        <rdfs:comment xml:lang="it">band/musicista ha l&apos;album</rdfs:comment>
         <rdfs:label xml:lang="it">ha album</rdfs:label>
         <rdfs:label xml:lang="en">has album</rdfs:label>
     </owl:ObjectProperty>
@@ -618,7 +644,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasCertification">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
-        <rdfs:label xml:lang="it">ha certificato</rdfs:label>
+        <rdfs:comment xml:lang="it">l&apos;album ha certificazione</rdfs:comment>
+        <rdfs:comment xml:lang="en">the album has certification</rdfs:comment>
+        <rdfs:label xml:lang="it">ha certificazione</rdfs:label>
         <rdfs:label xml:lang="en">has certification</rdfs:label>
     </owl:ObjectProperty>
     
@@ -630,6 +658,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Band"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
+        <rdfs:comment xml:lang="it">la band ha componente</rdfs:comment>
+        <rdfs:comment xml:lang="en">the band has member</rdfs:comment>
         <rdfs:label xml:lang="it">ha componente</rdfs:label>
         <rdfs:label xml:lang="en">has component</rdfs:label>
     </owl:ObjectProperty>
@@ -642,6 +672,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#takePlaceAt"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="it">la location ospita l&apos;evento</rdfs:comment>
+        <rdfs:comment xml:lang="en">the location hosts the event</rdfs:comment>
         <rdfs:label xml:lang="en">hosts event</rdfs:label>
         <rdfs:label xml:lang="it">ospita evento</rdfs:label>
     </owl:ObjectProperty>
@@ -653,6 +685,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasGenre">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Genre"/>
+        <rdfs:comment xml:lang="it">il brano ha genere musicale</rdfs:comment>
+        <rdfs:comment xml:lang="en">the song has musical genre</rdfs:comment>
         <rdfs:label xml:lang="it">ha genere</rdfs:label>
         <rdfs:label xml:lang="en">has genre</rdfs:label>
     </owl:ObjectProperty>
@@ -665,6 +699,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#locatedIn"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
+        <rdfs:comment xml:lang="it">il luogo contiene la location</rdfs:comment>
+        <rdfs:comment xml:lang="en">the place contains the location</rdfs:comment>
         <rdfs:label xml:lang="it">contiene location</rdfs:label>
         <rdfs:label xml:lang="en">has location</rdfs:label>
     </owl:ObjectProperty>
@@ -676,6 +712,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasPerformance">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
+        <rdfs:comment xml:lang="it">l&apos;evento ha performance</rdfs:comment>
+        <rdfs:comment xml:lang="en">the event has performance</rdfs:comment>
         <rdfs:label xml:lang="it">ha performance</rdfs:label>
         <rdfs:label xml:lang="en">has performance</rdfs:label>
     </owl:ObjectProperty>
@@ -688,6 +726,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#performedIn"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
+        <rdfs:comment xml:lang="it">la performance riguarda il brano</rdfs:comment>
+        <rdfs:comment xml:lang="en">the performance is about the song</rdfs:comment>
         <rdfs:label xml:lang="it">ha brano performato</rdfs:label>
         <rdfs:label xml:lang="en">has song performed</rdfs:label>
     </owl:ObjectProperty>
@@ -707,6 +747,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
+        <rdfs:comment xml:lang="en">band/musician wrote the song</rdfs:comment>
+        <rdfs:comment xml:lang="it">band/musicista ha scritto il brano</rdfs:comment>
         <rdfs:label xml:lang="it">ha scritto</rdfs:label>
         <rdfs:label xml:lang="en">has written</rdfs:label>
     </owl:ObjectProperty>
@@ -726,6 +768,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="en">band/musician is guest of the event</rdfs:comment>
+        <rdfs:comment xml:lang="it">band/musicista è ospite dell&apos;evento</rdfs:comment>
         <rdfs:label xml:lang="en">host of</rdfs:label>
         <rdfs:label xml:lang="it">ospite di</rdfs:label>
     </owl:ObjectProperty>
@@ -748,6 +792,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#hasPerformance"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#performanceBy"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">event x (which has performance y which is performed by band/musician z) hosts band/musician</rdfs:comment>
+        <rdfs:comment xml:lang="it">l&apos;evento x (che ha performance y che è performata da band/musicista z) ospita band/musicista</rdfs:comment>
         <rdfs:label xml:lang="en">hosts</rdfs:label>
         <rdfs:label xml:lang="it">ospita</rdfs:label>
     </owl:ObjectProperty>
@@ -760,6 +806,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="it">la location è situata nel luogo</rdfs:comment>
+        <rdfs:comment xml:lang="en">the location is located in the place</rdfs:comment>
         <rdfs:label xml:lang="en">located in</rdfs:label>
         <rdfs:label xml:lang="it">situata in</rdfs:label>
     </owl:ObjectProperty>
@@ -778,6 +826,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:comment xml:lang="it">la performance appartiene a band/musicista</rdfs:comment>
+        <rdfs:comment xml:lang="en">performance belongs to band/musician</rdfs:comment>
         <rdfs:label xml:lang="en">performance by</rdfs:label>
         <rdfs:label xml:lang="it">performance di</rdfs:label>
     </owl:ObjectProperty>
@@ -789,6 +839,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#performedIn">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Performance"/>
+        <rdfs:comment xml:lang="it">il brano è performato nella performance</rdfs:comment>
+        <rdfs:comment xml:lang="en">the song is performed in the performance</rdfs:comment>
         <rdfs:label xml:lang="it">performato in</rdfs:label>
         <rdfs:label xml:lang="en">performed in</rdfs:label>
     </owl:ObjectProperty>
@@ -801,6 +853,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#plays"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
+        <rdfs:comment xml:lang="it">lo strumento è suonato dal musicista</rdfs:comment>
+        <rdfs:comment xml:lang="en">the instrument is played by the musician</rdfs:comment>
         <rdfs:label xml:lang="en">played by</rdfs:label>
         <rdfs:label xml:lang="it">suonato da</rdfs:label>
     </owl:ObjectProperty>
@@ -812,6 +866,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#plays">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
+        <rdfs:comment xml:lang="it">il musicista suona lo strumento</rdfs:comment>
+        <rdfs:comment xml:lang="en">the musician plays the instrument</rdfs:comment>
         <rdfs:label xml:lang="en">plays</rdfs:label>
         <rdfs:label xml:lang="it">suona</rdfs:label>
     </owl:ObjectProperty>
@@ -824,6 +880,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="it">il luogo x è collocato all&apos;interno del luogo y</rdfs:comment>
+        <rdfs:comment xml:lang="en">place x is located inside place y</rdfs:comment>
         <rdfs:label xml:lang="it">collocato in</rdfs:label>
         <rdfs:label xml:lang="en">positioned in</rdfs:label>
     </owl:ObjectProperty>
@@ -835,6 +893,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#takePlaceAt">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
+        <rdfs:comment xml:lang="it">l&apos;evento è tenuto presso la location</rdfs:comment>
+        <rdfs:comment xml:lang="en">the event takes place at the location</rdfs:comment>
         <rdfs:label xml:lang="en">takes place at</rdfs:label>
         <rdfs:label xml:lang="it">tenuto presso</rdfs:label>
     </owl:ObjectProperty>
@@ -853,6 +913,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:comment xml:lang="it">il brano è scritto da band/musicista</rdfs:comment>
+        <rdfs:comment xml:lang="en">the song is written by the band/musician</rdfs:comment>
         <rdfs:label xml:lang="it">scritto da</rdfs:label>
         <rdfs:label xml:lang="en">written by</rdfs:label>
     </owl:ObjectProperty>
@@ -886,7 +948,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#attendance">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment xml:lang="en">attendance</rdfs:comment>
+        <rdfs:comment xml:lang="en">number of spectators attending an event</rdfs:comment>
+        <rdfs:comment xml:lang="it">numero degli spettatori che assistono ad un evento</rdfs:comment>
+        <rdfs:label xml:lang="en">attendance</rdfs:label>
         <rdfs:label xml:lang="it">numero spettatori</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -897,7 +961,9 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#birthDate">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">birth date</rdfs:comment>
+        <rdfs:comment xml:lang="it">data di nascita di una persona</rdfs:comment>
+        <rdfs:comment xml:lang="en">date of birth of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">birth date</rdfs:label>
         <rdfs:label xml:lang="it">data di nascita</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -908,6 +974,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventEndDate">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="it">data in cui termina un evento</rdfs:comment>
+        <rdfs:comment xml:lang="en">date on which an event ends</rdfs:comment>
         <rdfs:label xml:lang="it">data fine evento</rdfs:label>
         <rdfs:label xml:lang="en">event end date</rdfs:label>
     </owl:DatatypeProperty>
@@ -919,8 +987,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventStartDate">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">event start date</rdfs:comment>
+        <rdfs:comment xml:lang="it">data in cui inizia un evento</rdfs:comment>
+        <rdfs:comment xml:lang="en">date on which an event begins</rdfs:comment>
         <rdfs:label xml:lang="it">data inizio evento</rdfs:label>
+        <rdfs:label xml:lang="en">event start date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -930,6 +1000,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#eventType">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">tipologia dell&apos;evento</rdfs:comment>
+        <rdfs:comment xml:lang="en">type of event</rdfs:comment>
         <rdfs:label xml:lang="en">event type</rdfs:label>
         <rdfs:label xml:lang="it">tipo evento</rdfs:label>
     </owl:DatatypeProperty>
@@ -941,6 +1013,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#manifest">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="en">URI containing the event poster image</rdfs:comment>
+        <rdfs:comment xml:lang="it">URI contenente l&apos;immagine di manifesto dell&apos;evento</rdfs:comment>
         <rdfs:label xml:lang="en">manifest</rdfs:label>
         <rdfs:label xml:lang="it">manifesto</rdfs:label>
     </owl:DatatypeProperty>
@@ -952,8 +1026,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#releaseDate">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">release date</rdfs:comment>
+        <rdfs:comment xml:lang="it">data di rilascio di un album musicale</rdfs:comment>
+        <rdfs:comment xml:lang="en">release date of a music album</rdfs:comment>
         <rdfs:label xml:lang="it">data uscita</rdfs:label>
+        <rdfs:label xml:lang="en">release date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -963,8 +1039,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#salesCount">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment xml:lang="en">sales count</rdfs:comment>
+        <rdfs:comment xml:lang="en">number of album sales</rdfs:comment>
+        <rdfs:comment xml:lang="it">number of album sales</rdfs:comment>
         <rdfs:label xml:lang="it">numero vendite</rdfs:label>
+        <rdfs:label xml:lang="en">sales count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1057,7 +1135,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
-        <rdfs:comment xml:lang="it">Raccolta di brani musicali di uno stesso musicista/band,</rdfs:comment>
+        <rdfs:comment xml:lang="en">Collection of songs by the same musician/band.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Raccolta di brani musicali di uno stesso musicista/band.</rdfs:comment>
         <rdfs:label xml:lang="en">Album</rdfs:label>
         <rdfs:label xml:lang="it">Album</rdfs:label>
     </owl:Class>
@@ -1069,8 +1148,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Artist">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Person"/>
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Person who engages in any form of artistic creation or practice.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Persona che si impegna in qualsiasi forma di creazione o pratica artistica.</rdfs:comment>
         <rdfs:label xml:lang="en">Artist</rdfs:label>
         <rdfs:label xml:lang="it">Artista</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q483501</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1094,7 +1176,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
-        <rdfs:comment>Gruppo di musicisti.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collettivo di almeno 2 musicisti.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Group of at least 2 musicians.</rdfs:comment>
         <rdfs:label xml:lang="en">Band</rdfs:label>
         <rdfs:label xml:lang="it">Band</rdfs:label>
     </owl:Class>
@@ -1122,7 +1205,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-        <rdfs:comment>Musicista che suona uno strumento a corde, nello specifico il Basso.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musician playing a stringed instrument, specifically the Bass.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista che suona uno strumento a corde, nello specifico il Basso.</rdfs:comment>
         <rdfs:label xml:lang="en">Bass Player</rdfs:label>
         <rdfs:label xml:lang="it">Bassista</rdfs:label>
     </owl:Class>
@@ -1148,6 +1232,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="it">Eventi temporanei e programmati, come un festival, un concerto o simili, con almeno 10.000 spettatori.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Temporary and scheduled events, such as a festival, concert or similar, with at least 10,000 spectators.</rdfs:comment>
         <rdfs:label xml:lang="en">Big Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento Grande</rdfs:label>
     </owl:Class>
@@ -1163,6 +1249,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
             </owl:Restriction>
         </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Award given to music albums that achieve a certain sales volume.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album musicali che raggiungono un determinato volume di vendite.</rdfs:comment>
         <rdfs:label xml:lang="en">Certification</rdfs:label>
         <rdfs:label xml:lang="it">Certificazione</rdfs:label>
     </owl:Class>
@@ -1173,6 +1261,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#City">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="it">Grande insediamento umano permanente.</rdfs:comment>
         <rdfs:comment xml:lang="en">Large permanent human settlement.</rdfs:comment>
         <rdfs:label xml:lang="it">Città</rdfs:label>
         <rdfs:label xml:lang="en">City</rdfs:label>
@@ -1197,6 +1286,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="it">Grande massa continentale identificata per convenzione.</rdfs:comment>
         <rdfs:comment xml:lang="en">Large landmass identified by convention.</rdfs:comment>
         <rdfs:label xml:lang="en">Continent</rdfs:label>
         <rdfs:label xml:lang="it">Continente</rdfs:label>
@@ -1209,8 +1299,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#DiamondCertification">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
-        <rdfs:comment xml:lang="en">Diamond Certification</rdfs:comment>
+        <rdfs:comment xml:lang="en">Award given to albums that have sold more than 1,000,000.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite maggiore di 1.000.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Diamante</rdfs:label>
+        <rdfs:label xml:lang="en">Diamond Certification</rdfs:label>
     </owl:Class>
     
 
@@ -1236,7 +1328,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-        <rdfs:comment>Musicista che suona uno strumento a percussione, nello specifico la Batteria.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musician who plays a percussion instrument, specifically the Drums.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista che suona uno strumento a percussione, nello specifico la Batteria.</rdfs:comment>
         <rdfs:label xml:lang="it">Batterista</rdfs:label>
         <rdfs:label xml:lang="en">Drummer</rdfs:label>
     </owl:Class>
@@ -1269,7 +1362,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment>Eventi temporanei e programmati, come una conferenza, un festival, una competizione o simili.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Eventi temporanei e programmati, come un festival, un concerto o simili.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Temporary and scheduled events, such as a festival, concert or similar.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
         <rdfs:label xml:lang="it">Evento</rdfs:label>
     </owl:Class>
@@ -1285,6 +1379,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
             </owl:Restriction>
         </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A place where an event is held, such as a sports arena, club, arena, stadium.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Posto in cui si tiene un evento, come un palazzetto, un locale, un&apos;arena, uno stadio.</rdfs:comment>
         <rdfs:label xml:lang="en">Location</rdfs:label>
         <rdfs:label xml:lang="it">Location</rdfs:label>
     </owl:Class>
@@ -1294,7 +1390,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.semanticweb.org/lorenzo/ontologies/music#Genre -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Genre">
-        <rdfs:comment>Categoria convenzionale che identifica e classifica i brani e le composizioni in base a criteri di affinità.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Categoria convenzionale che identifica e classifica i brani e le composizioni in base a criteri di affinità.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Conventional category that identifies and classifies songs and compositions based on criteria of affinity.</rdfs:comment>
         <rdfs:label xml:lang="it">Genere Musicale</rdfs:label>
         <rdfs:label xml:lang="en">Music Genre</rdfs:label>
     </owl:Class>
@@ -1305,8 +1402,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#GoldCertification">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
-        <rdfs:comment xml:lang="en">Gold Certification</rdfs:comment>
+        <rdfs:comment xml:lang="en">Award given to albums that have had between 50,000 and 100,000 sales.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite compreso tra 50.000 e 100.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Oro</rdfs:label>
+        <rdfs:label xml:lang="en">Gold Certification</rdfs:label>
     </owl:Class>
     
 
@@ -1334,7 +1433,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-        <rdfs:comment>Musicista che suona uno strumento a corde, nello specifico la chitarra classica o la chitarra elettrica.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musician who plays a stringed instrument, specifically the classical guitar or the electric guitar.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista che suona uno strumento a corde, nello specifico la chitarra classica o la chitarra elettrica.</rdfs:comment>
         <rdfs:label xml:lang="it">Chitarrista</rdfs:label>
         <rdfs:label xml:lang="en">Guitarist</rdfs:label>
     </owl:Class>
@@ -1372,7 +1472,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
-        <rdfs:comment>Tipo di strumento musicale che produce suoni tramite la pressione di tasti o pulsanti, che azionano meccanismi interni che producono il suono.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la pressione di tasti o pulsanti, che azionano meccanismi interni che producono il suono.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by pressing keys or buttons, which operate internal mechanisms that produce sound.</rdfs:comment>
         <rdfs:label xml:lang="en">Keyboard Instrument</rdfs:label>
         <rdfs:label xml:lang="it">Strumento a Tastiera</rdfs:label>
     </owl:Class>
@@ -1389,7 +1490,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-        <rdfs:comment>Musicista che suona tastiere elettroniche, in grado di creare o ricreare diversi tipi di effetti.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musician who plays electronic keyboards, capable of creating or recreating different types of effects.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista che suona tastiere elettroniche, in grado di creare o ricreare diversi tipi di effetti.</rdfs:comment>
         <rdfs:label xml:lang="en">Keyboard Player</rdfs:label>
         <rdfs:label xml:lang="it">Tastierista</rdfs:label>
     </owl:Class>
@@ -1418,6 +1520,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="it">Eventi temporanei e programmati, come un festival, un concerto o simili, con un numero di spettatori compreso tra 5.000 e 10.000.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Temporary and scheduled events, such as a festival, concert or similar, with an audience of between 5,000 and 10,000.</rdfs:comment>
         <rdfs:label xml:lang="it">Evento Medio</rdfs:label>
         <rdfs:label xml:lang="en">Medium Event</rdfs:label>
     </owl:Class>
@@ -1458,7 +1562,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Artist"/>
-        <rdfs:comment>Il musicista è una persona che svolge e ha talento per una determinata attività in musica, inerente alla creazione o all&apos;esecuzione di composizioni strumentali, vocali, corali.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person who carries out and has talent for a specific activity in music, inherent in the creation or execution of instrumental, vocal, choral compositions.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Persona che svolge e ha talento per una determinata attività in musica, inerente alla creazione o all&apos;esecuzione di composizioni strumentali, vocali, corali.</rdfs:comment>
         <rdfs:label xml:lang="en">Musician</rdfs:label>
         <rdfs:label xml:lang="it">Musicista</rdfs:label>
     </owl:Class>
@@ -1470,6 +1575,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Nation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <rdfs:comment xml:lang="en">Community of people who share a common language, culture, ethnicity, descent, or history.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Comunità di persone che condividono una lingua, una cultura, un&apos;etnia, una discendenza o una storia comuni.</rdfs:comment>
         <rdfs:label xml:lang="en">Nation</rdfs:label>
         <rdfs:label xml:lang="it">Nazione</rdfs:label>
         <rdfs:seeAlso>https://www.wikidata.org/wiki/Q6266</rdfs:seeAlso>
@@ -1488,7 +1594,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
-        <rdfs:comment>Tipo di strumento musicale che produce suoni tramite la percussione o il colpo di un oggetto.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la percussione o il colpo di un oggetto.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by striking or striking an object.</rdfs:comment>
         <rdfs:label xml:lang="en">Percussion Instrument</rdfs:label>
         <rdfs:label xml:lang="it">Strumento a Percussione</rdfs:label>
     </owl:Class>
@@ -1523,6 +1630,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Musical performance carried out during an event, by a particular Musician/Band, who performs a specific Song.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Performance musicale effettuata durante un evento, da un particolare Musicista/Band, che performa un determinato Brano.</rdfs:comment>
         <rdfs:label xml:lang="en">Performance</rdfs:label>
         <rdfs:label xml:lang="it">Performance</rdfs:label>
     </owl:Class>
@@ -1533,6 +1642,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Person">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">It represents a person, whether alive, dead, real or imagined.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Rappresenta una persona, che sia viva, morta, reale o immaginaria.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <rdfs:label xml:lang="it">Persona</rdfs:label>
     </owl:Class>
@@ -1548,10 +1659,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Location of the object, structure or event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Area geografica, come una città, una nazione o un continente.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Geographical area, such as a city, country, or continent.</rdfs:comment>
         <rdfs:label xml:lang="it">Luogo</rdfs:label>
         <rdfs:label xml:lang="en">Place</rdfs:label>
-        <rdfs:seeAlso>https://www.wikidata.org/wiki/Property:P276</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1560,8 +1671,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#PlatinumCertification">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
-        <rdfs:comment xml:lang="en">Platinum Certification</rdfs:comment>
+        <rdfs:comment xml:lang="en">Award given to albums that have had between 100,000 and 1,000,000 sales.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite compreso tra 100.000 e 1.000.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Platino</rdfs:label>
+        <rdfs:label xml:lang="en">Platinum Certification</rdfs:label>
     </owl:Class>
     
 
@@ -1582,7 +1695,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Musician"/>
-        <rdfs:comment>Musicista che, mediante l&apos;utilizzo della propria voce, produce una successione di suoni ordinati per ritmo e altezza.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musician who, using his own voice, produces a succession of sounds ordered by rhythm and pitch.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista che, mediante l&apos;utilizzo della propria voce, produce una successione di suoni ordinati per ritmo e altezza.</rdfs:comment>
         <rdfs:label xml:lang="it">Cantante</rdfs:label>
         <rdfs:label xml:lang="en">Singer</rdfs:label>
     </owl:Class>
@@ -1611,6 +1725,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Event"/>
+        <rdfs:comment xml:lang="it">Eventi temporanei e programmati, come un festival, un concerto o simili, con al massimo 5.000 spettatori.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Temporary and scheduled events, such as a festival, concert or similar, with a maximum of 5,000 spectators.</rdfs:comment>
         <rdfs:label xml:lang="it">Evento Piccolo</rdfs:label>
         <rdfs:label xml:lang="en">Small Event</rdfs:label>
     </owl:Class>
@@ -1633,7 +1749,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:comment>Composizione vocale scritta per una o più voci perlopiù con accompagnamento strumentale.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Composizione vocale scritta per una o più voci perlopiù con accompagnamento strumentale.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Vocal composition written for one or more voices mostly with instrumental accompaniment.</rdfs:comment>
         <rdfs:label xml:lang="it">Brano</rdfs:label>
         <rdfs:label xml:lang="en">Song</rdfs:label>
     </owl:Class>
@@ -1657,7 +1774,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
-        <rdfs:comment>Tipo di strumento musicale che produce suoni tramite la vibrazione delle corde.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la vibrazione delle corde.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by vibrating strings.</rdfs:comment>
         <rdfs:label xml:lang="en">Stringed Instrument</rdfs:label>
         <rdfs:label xml:lang="it">Strumento a Corde</rdfs:label>
     </owl:Class>
@@ -1668,6 +1786,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Track">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment xml:lang="en">Single item of an album, containing a Song.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Singolo item di un album, contenente un Brano.</rdfs:comment>
         <rdfs:label xml:lang="it">Traccia</rdfs:label>
         <rdfs:label xml:lang="en">Track</rdfs:label>
     </owl:Class>
@@ -1688,19 +1808,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
-        <rdfs:comment>Tipo di strumento musicale che produce suoni tramite la vibrazione delle labbra o delle corde vocali dell&apos;esecutore, mentre soffia in una bocca o in una canna.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Tipo di strumento musicale che produce suoni tramite la vibrazione delle labbra o delle corde vocali dell&apos;esecutore, mentre soffia in una bocca o in una canna.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of musical instrument that produces sound by vibrating the performer&apos;s lips or vocal cords while blowing into a mouth or reed.</rdfs:comment>
         <rdfs:label xml:lang="it">Strumento a Fiato</rdfs:label>
         <rdfs:label xml:lang="en">Wind Instrument</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#Thing -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <rdfs:label xml:lang="en">Music</rdfs:label>
-        <rdfs:label xml:lang="it">Musica</rdfs:label>
-    </rdf:Description>
     
 
 
@@ -1762,8 +1874,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WalkAllOverYou"/>
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WholeLottaRosie"/>
         <hostOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
+        <rdfs:comment xml:lang="en">Australian hard rock band.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Gruppo hard rock australiano.</rdfs:comment>
         <rdfs:label xml:lang="en">AC/DC</rdfs:label>
         <rdfs:label xml:lang="it">AC/DC</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q27593</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1773,8 +1888,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Africa">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent on the Earth&apos;s northern and southern hemispheres.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente degli emisferi nord e sud della Terra.</rdfs:comment>
         <rdfs:label xml:lang="en">Africa</rdfs:label>
         <rdfs:label xml:lang="it">Africa</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q15</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1791,8 +1909,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ElectricGuitar"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1955-03-31</birthDate>
+        <rdfs:comment xml:lang="en">Australian guitarist.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Chitarrista australiano.</rdfs:comment>
         <rdfs:label xml:lang="en">Angus Young</rdfs:label>
         <rdfs:label xml:lang="it">Angus Young</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q43932</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1803,8 +1924,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#JustinBieber"/>
+        <rdfs:comment xml:lang="en">2021 single by Justin Bieber.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Singolo del 2021 di Justin Bieber.</rdfs:comment>
         <rdfs:label xml:lang="en">Anyone</rdfs:label>
         <rdfs:label xml:lang="it">Anyone</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q104612841</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1815,8 +1939,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Nation"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#SouthAmerica"/>
+        <rdfs:comment xml:lang="en">Sovereign state in South America.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Stato sovrano in Sud America.</rdfs:comment>
         <rdfs:label xml:lang="en">Argentina</rdfs:label>
         <rdfs:label xml:lang="it">Argentina</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q414</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1826,8 +1953,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Asia">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent on Earth, mainly on the Earth&apos;s northeastern quadrant.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente sulla Terra, principalmente sul quadrante nord-orientale della Terra.</rdfs:comment>
         <rdfs:label xml:lang="en">Asia</rdfs:label>
         <rdfs:label xml:lang="it">Asia</rdfs:label>
+        <rdfs:seeAlso xml:lang="it">https://www.wikidata.org/wiki/Q48</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1839,6 +1969,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="en">First performance of the 1974 Boston Garden event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima performance dell&apos;evento BostonGarden1974.</rdfs:comment>
+        <rdfs:label xml:lang="en">BG1974_1</rdfs:label>
+        <rdfs:label xml:lang="it">BG1974_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1850,6 +1984,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DownTheHighway"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="en">Second performance of the 1974 Boston Garden event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda performance dell&apos;evento BostonGarden1974.</rdfs:comment>
+        <rdfs:label xml:lang="en">BG1974_2</rdfs:label>
+        <rdfs:label xml:lang="it">BG1974_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1861,6 +1999,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GirlFromTheNorthCountry"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Terza performance dell&apos;evento BostonGarden1974.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third performance of the 1974 Boston Garden event.</rdfs:comment>
+        <rdfs:label xml:lang="en">BG1974_3</rdfs:label>
+        <rdfs:label xml:lang="it">BG1974_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1872,6 +2014,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MastersOfWar"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="en">Fourth performance of the 1974 Boston Garden event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta performance dell&apos;evento BostonGarden1974.</rdfs:comment>
+        <rdfs:label xml:lang="en">BG1974_4</rdfs:label>
+        <rdfs:label xml:lang="it">BG1974_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1883,6 +2029,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OxfordTown"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="en">Fifth performance of the 1974 Boston Garden event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta performance dell&apos;evento BostonGarden1974.</rdfs:comment>
+        <rdfs:label xml:lang="en">BG1974_5</rdfs:label>
+        <rdfs:label xml:lang="it">BG1974_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1894,6 +2044,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_1"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Bad Boy Boogie</rdfs:label>
         <rdfs:label xml:lang="it">Bad Boy Boogie</rdfs:label>
     </owl:NamedIndividual>
@@ -1905,6 +2057,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Bass">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <rdfs:comment xml:lang="en">Musical instrument capable of producing sounds in the low register.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale in grado di produrre suoni nel registro grave.</rdfs:comment>
         <rdfs:label xml:lang="en">Bass</rdfs:label>
         <rdfs:label xml:lang="it">Basso</rdfs:label>
     </owl:NamedIndividual>
@@ -1918,6 +2072,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_2"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Beating Around the Bush</rdfs:label>
         <rdfs:label xml:lang="it">Beating Around the Bush</rdfs:label>
     </owl:NamedIndividual>
@@ -1944,8 +2100,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OldBrownShoe"/>
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rain"/>
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheBalladOfJohnAndYoko"/>
+        <rdfs:comment xml:lang="en">English rock band (1960–1970).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Gruppo rock inglese (1960-1970).</rdfs:comment>
         <rdfs:label xml:lang="en">Beatles</rdfs:label>
         <rdfs:label xml:lang="it">Beatles</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q1299</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -1957,6 +2116,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_1"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Big Brother</rdfs:label>
         <rdfs:label xml:lang="it">Big Brother</rdfs:label>
     </owl:NamedIndividual>
@@ -1970,6 +2131,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_2"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Blame It On The Sun</rdfs:label>
         <rdfs:label xml:lang="it">Blame It On The Sun</rdfs:label>
     </owl:NamedIndividual>
@@ -1983,8 +2146,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BG1974_1"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Canzone originale scritta e composta da Bob Dylan; originariamente registrato da Bob Dylan nel 1962 e pubblicato nel 1963.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Original song written and composed by Bob Dylan; originally recorded by Bob Dylan in 1962 and released in 1963.</rdfs:comment>
         <rdfs:label xml:lang="en">Blowin In The Wind</rdfs:label>
         <rdfs:label xml:lang="it">Blowin In The Wind</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q640529</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2014,8 +2180,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ClassicGuitar"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1941-05-24</birthDate>
+        <rdfs:comment xml:lang="en">American singer-songwriter (born 1941).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Cantautore americano (nato nel 1941).</rdfs:comment>
         <rdfs:label xml:lang="en">Bob Dylan</rdfs:label>
         <rdfs:label xml:lang="it">Bob Dylan</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q392</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2032,6 +2201,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1946-07-09</birthDate>
+        <rdfs:comment xml:lang="en">British-Australian rock singer (1946-1980).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Cantante rock britannico-australiano (1946-1980).</rdfs:comment>
         <rdfs:label xml:lang="en">Bon Scott</rdfs:label>
         <rdfs:label xml:lang="it">Bon Scott</rdfs:label>
     </owl:NamedIndividual>
@@ -2046,8 +2217,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasLocation rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGardens"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#USA"/>
+        <rdfs:comment xml:lang="en">Capital and largest city of Massachusetts, United States.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Capitale e città più grande del Massachusetts, Stati Uniti.</rdfs:comment>
         <rdfs:label xml:lang="en">Boston</rdfs:label>
         <rdfs:label xml:lang="it">Boston</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q100</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2071,6 +2245,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1974-01-14</eventStartDate>
         <eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concert</eventType>
         <manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://i.postimg.cc/V61yc2W8/Bob-Dylan-jpg.png</manifest>
+        <rdfs:comment xml:lang="it">Evento musicale tenuto da Bob Dylan, presso il Boston Garden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Musical event held by Bob Dylan, at the Boston Garden.</rdfs:comment>
         <rdfs:label xml:lang="en">BostonGarden1974</rdfs:label>
         <rdfs:label xml:lang="it">BostonGarden1974</rdfs:label>
     </owl:NamedIndividual>
@@ -2083,8 +2259,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <hasEventPlaced rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BostonGarden1974"/>
         <locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Boston"/>
+        <rdfs:comment xml:lang="it">Arena al coperto a Boston, Massachusetts, USA tra il 1928 e il 1997.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indoor arena in Boston, Massachusetts, USA between 1928-1997.</rdfs:comment>
         <rdfs:label xml:lang="en">Boston Gardens</rdfs:label>
         <rdfs:label xml:lang="it">Boston Gardens</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q894567</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2101,8 +2280,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1947-10-05</birthDate>
+        <rdfs:comment xml:lang="it">Cantante, cantautore e conduttore televisivo inglese di spettacoli automobilistici.</rdfs:comment>
+        <rdfs:comment xml:lang="en">English singer, songwriter and television show host of car shows.</rdfs:comment>
         <rdfs:label xml:lang="en">Brian Johnson</rdfs:label>
         <rdfs:label xml:lang="it">Brian Johnson</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q295948</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2115,6 +2297,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasLocation rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Argentina"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#SouthAmerica"/>
+        <rdfs:comment xml:lang="en">Capital of Argentina.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Capitale dell&apos;Argentina.</rdfs:comment>
         <rdfs:label xml:lang="en">Buenos Aires</rdfs:label>
         <rdfs:label xml:lang="it">Buenos Aires</rdfs:label>
     </owl:NamedIndividual>
@@ -2127,6 +2311,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Can&apos;t Buy Me Love</rdfs:label>
         <rdfs:label xml:lang="it">Can&apos;t Buy Me Love</rdfs:label>
     </owl:NamedIndividual>
@@ -2138,6 +2324,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Clarinet">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
+        <rdfs:comment xml:lang="it">Strumento musicale a fiato, caratterizzato da un&apos;imboccatura a becco e da un sistema di chiavi per controllare l&apos;emissione del suono.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wind musical instrument, characterized by a beaked mouthpiece and a system of keys to control the emission of sound.</rdfs:comment>
         <rdfs:label xml:lang="en">Clarinet</rdfs:label>
         <rdfs:label xml:lang="it">Clarinetto</rdfs:label>
     </owl:NamedIndividual>
@@ -2154,6 +2342,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GeorgeHarrison"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#JohnLennon"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PaulMcCartney"/>
+        <rdfs:comment xml:lang="it">Tipo di chitarra utilizzato per l&apos;esecuzione di brani di musica classuca o popolare.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of guitar used to play classical or popular music.</rdfs:comment>
         <rdfs:label xml:lang="it">Chitarra Classica</rdfs:label>
         <rdfs:label xml:lang="en">Classic Guitar</rdfs:label>
     </owl:NamedIndividual>
@@ -2166,6 +2356,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Crabsody in Blue</rdfs:label>
         <rdfs:label xml:lang="it">Crabsody in Blue</rdfs:label>
     </owl:NamedIndividual>
@@ -2181,6 +2373,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <certifies rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude!"/>
         <certifies rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell!"/>
         <certifies rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock!"/>
+        <rdfs:comment xml:lang="en">Award given to albums that have sold more than 1,000,000.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite maggiore di 1.000.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Diamante</rdfs:label>
         <rdfs:label xml:lang="en">Diamond Certification</rdfs:label>
     </owl:NamedIndividual>
@@ -2193,6 +2387,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Dog Eat Dog</rdfs:label>
         <rdfs:label xml:lang="it">Dog Eat Dog</rdfs:label>
     </owl:NamedIndividual>
@@ -2205,6 +2401,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Don&apos;t Let Me Down</rdfs:label>
         <rdfs:label xml:lang="it">Don&apos;t Let Me Down</rdfs:label>
     </owl:NamedIndividual>
@@ -2218,6 +2416,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BG1974_2"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">Down the Highway</rdfs:label>
         <rdfs:label xml:lang="it">Down the Highway</rdfs:label>
     </owl:NamedIndividual>
@@ -2231,8 +2431,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PercussionInstrument"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PhilRudd"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RingoStarr"/>
+        <rdfs:comment xml:lang="en">Collection of drums and other percussion instruments.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collezione di tamburi e altri strumenti a percussione.</rdfs:comment>
         <rdfs:label xml:lang="it">Batteria</rdfs:label>
         <rdfs:label xml:lang="en">Drums</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q128309</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2249,8 +2452,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ClassicGuitar"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1991-02-17</birthDate>
+        <rdfs:comment xml:lang="it">Cantautore inglese.</rdfs:comment>
+        <rdfs:comment xml:lang="en">English singer-songwriter.</rdfs:comment>
         <rdfs:label xml:lang="en">Ed Sheeran</rdfs:label>
         <rdfs:label xml:lang="it">Ed Sheeran</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q47447</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2262,6 +2468,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#AngusYoung"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TomPetty"/>
+        <rdfs:comment xml:lang="it">Tipo di chitarra in cui la vibrazione delle corde viene rilevata da uno o più pick-up.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of guitar in which the vibration of the strings is picked up by one or more pickups.</rdfs:comment>
         <rdfs:label xml:lang="it">Chitarra Elettrica</rdfs:label>
         <rdfs:label xml:lang="en">Electric Guitar</rdfs:label>
     </owl:NamedIndividual>
@@ -2274,8 +2482,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Nation"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Europe"/>
+        <rdfs:comment xml:lang="en">Country in north-west Europe, part of the United Kingdom.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Paese dell&apos;Europa nord-occidentale, parte del Regno Unito.</rdfs:comment>
         <rdfs:label xml:lang="en">England</rdfs:label>
         <rdfs:label xml:lang="it">Inghilterra</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q21</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2285,8 +2496,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Europe">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente.</rdfs:comment>
         <rdfs:label xml:lang="it">Europa</rdfs:label>
         <rdfs:label xml:lang="en">Europe</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q46</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2296,8 +2510,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Flute">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
+        <rdfs:comment xml:lang="it">Strumento musicale a fiato, costituito da un tubo cavo con un&apos;imboccatura a becco attraverso cui l&apos;esecutore soffia per produrre il suono.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wind musical instrument, consisting of a hollow tube with a beaked mouthpiece through which the performer blows to produce sound.</rdfs:comment>
         <rdfs:label xml:lang="it">Flauto</rdfs:label>
         <rdfs:label xml:lang="en">Flute</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q11405</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2312,6 +2529,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#IShallBeFree"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MastersOfWar"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OxfordTown"/>
+        <rdfs:comment xml:lang="it">Meta-genere musicale che comprende musica folk tradizionale, musica folk contemporanea (evolutasi dalla prima durante il folk revival del XX secolo) e derivati di questi due rami.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music meta-genre encompassing traditional folk music, contemporary folk music (evolved from the former during the 20th-century folk revival), and derivatives of these two branches.</rdfs:comment>
         <rdfs:label xml:lang="en">Folk</rdfs:label>
         <rdfs:label xml:lang="it">Folk</rdfs:label>
     </owl:NamedIndividual>
@@ -2325,6 +2544,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BigBrother"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="en">First performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_1</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2336,6 +2559,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlameItOnTheSun"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="en">Second performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_2</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2347,6 +2574,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LondonSong"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Terza performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_3</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2358,6 +2589,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="en">Fourth performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_4</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2369,6 +2604,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Superstition"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="en">Fifth performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_5</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2380,6 +2619,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Sesta performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_6</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2391,6 +2634,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Victoria"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Settima performance dell&apos;evento Glastonbury 2010.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seventh performance of the Glastonbury 2010 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">GL2010_7</rdfs:label>
+        <rdfs:label xml:lang="it">GL2010_7</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2409,8 +2656,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ClassicGuitar"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1943-02-25</birthDate>
+        <rdfs:comment xml:lang="en">British musician and lead guitarist of the Beatles (1943-2001).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista britannico e chitarrista solista dei Beatles (1943-2001).</rdfs:comment>
         <rdfs:label xml:lang="en">George Harrison</rdfs:label>
         <rdfs:label xml:lang="it">George Harrison</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q2643</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2422,6 +2672,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BG1974_3"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">Girl From The North Country</rdfs:label>
         <rdfs:label xml:lang="it">Girl From The North Country</rdfs:label>
     </owl:NamedIndividual>
@@ -2434,6 +2686,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Girls Got Rhythm</rdfs:label>
         <rdfs:label xml:lang="it">Girls Got Rhythm</rdfs:label>
     </owl:NamedIndividual>
@@ -2464,6 +2718,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-23</eventStartDate>
         <eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Festival</eventType>
         <manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://modculture.typepad.com/.a/6a00d83451cbb069e20133f1a5929a970b-pi</manifest>
+        <rdfs:comment xml:lang="it">Il Glastonbury Festival of Contemporary Performing Arts 2010 si è svolto a Pilton, nel Somerset, in Inghilterra, nel giugno 2010.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The 2010 Glastonbury Festival of Contemporary Performing Arts took place in Pilton, Somerset, England in June 2010.</rdfs:comment>
         <rdfs:label xml:lang="en">Glastonbury2010</rdfs:label>
         <rdfs:label xml:lang="it">Glastonbury2010</rdfs:label>
         <rdfs:seeAlso>https://musicbrainz.org/event/157fc8ff-5638-48b0-99b6-fc0f33ef63e0</rdfs:seeAlso>
@@ -2478,6 +2734,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_3"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Go Down</rdfs:label>
         <rdfs:label xml:lang="it">Go Down</rdfs:label>
     </owl:NamedIndividual>
@@ -2490,6 +2748,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GoldCertification"/>
         <certifies rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheStoryteller"/>
+        <rdfs:comment xml:lang="en">Award given to albums that have had between 50,000 and 100,000 sales.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite compreso tra 50.000 e 100.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Oro</rdfs:label>
         <rdfs:label xml:lang="en">Gold Certification</rdfs:label>
     </owl:NamedIndividual>
@@ -2514,6 +2774,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HeyJude"/>
+        <rdfs:comment xml:lang="en">First track of the album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_1</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2535,6 +2799,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OldBrownShoe"/>
+        <rdfs:comment xml:lang="en">Second track of the album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_2</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2556,6 +2824,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DontLetMeDown"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track of the album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_3</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2577,6 +2849,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TheBalladOfJohnAndYoko"/>
+        <rdfs:comment xml:lang="en">Fourth track on the album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_4</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2598,6 +2874,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CantBuyMeLove"/>
+        <rdfs:comment xml:lang="en">Fifth track on the album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_5</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2620,6 +2900,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rain"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album Hey Jude!</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the album Hey Jude!</rdfs:comment>
+        <rdfs:label xml:lang="en">HJ_6</rdfs:label>
+        <rdfs:label xml:lang="it">HJ_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2642,6 +2926,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HighwayToHell"/>
+        <rdfs:comment xml:lang="en">First track of the album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_1</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2663,6 +2951,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GirlsGotRhythm"/>
+        <rdfs:comment xml:lang="en">Second track on the album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_2</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2684,6 +2976,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WalkAllOverYou"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track of the album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_3</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2705,6 +3001,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TouchTooMuch"/>
+        <rdfs:comment xml:lang="en">Fourth track on the album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_4</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2726,6 +3026,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BeatingAroundTheBush"/>
+        <rdfs:comment xml:lang="en">Fifth track on the album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_5</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2748,6 +3052,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ShotDownInFlames"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album Highway to Hell!</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the album Highway to Hell!</rdfs:comment>
+        <rdfs:label xml:lang="en">HTH_6</rdfs:label>
+        <rdfs:label xml:lang="it">HTH_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2758,8 +3066,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <hasEventPlaced rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-Ray1995"/>
         <locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#SanFrancisco"/>
+        <rdfs:comment xml:lang="it">Ex teatro a San Francisco, California, Stati Uniti, successivamente utilizzato come chiesa, poi come bar.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Former movie theater in San Francisco, California, United States, later used as a church, then as a bar.</rdfs:comment>
         <rdfs:label xml:lang="en">Harding Theater</rdfs:label>
         <rdfs:label xml:lang="it">Harding Theater</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q14682103</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2769,8 +3080,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Harp">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <rdfs:comment xml:lang="en">Class of musical instruments.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Classe di strumenti musicali.</rdfs:comment>
         <rdfs:label xml:lang="it">Arpa</rdfs:label>
         <rdfs:label xml:lang="en">Harp</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q47369</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2781,6 +3095,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Hell Ain&apos;t a Bad Place to Be</rdfs:label>
         <rdfs:label xml:lang="it">Hell Ain&apos;t a Bad Place to Be</rdfs:label>
     </owl:NamedIndividual>
@@ -2793,6 +3109,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Hey Jude</rdfs:label>
         <rdfs:label xml:lang="it">Hey Jude</rdfs:label>
     </owl:NamedIndividual>
@@ -2805,8 +3123,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Highway to Hell</rdfs:label>
         <rdfs:label xml:lang="it">Highway to Hell</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q1508213</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2817,6 +3138,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">I Believe</rdfs:label>
         <rdfs:label xml:lang="it">I Believe</rdfs:label>
     </owl:NamedIndividual>
@@ -2829,6 +3152,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">I Shall Be Free</rdfs:label>
         <rdfs:label xml:lang="it">I Shall Be Free</rdfs:label>
     </owl:NamedIndividual>
@@ -2844,8 +3169,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MaybeYourBaby"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#YouAreTheSunshineOfMyLife"/>
+        <rdfs:comment xml:lang="en">Musical style and genre.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Stile e genere musicale.</rdfs:comment>
         <rdfs:label xml:lang="en">Jazz</rdfs:label>
         <rdfs:label xml:lang="it">Jazz</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q8341</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2864,8 +3192,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ClassicGuitar"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1940-10-09</birthDate>
+        <rdfs:comment xml:lang="it">Cantante e cantautore inglese, membro fondatore dei Beatles (1940-1980).</rdfs:comment>
+        <rdfs:comment xml:lang="en">English singer and songwriter, founding member of The Beatles (1940–1980).</rdfs:comment>
         <rdfs:label xml:lang="en">John Lennon</rdfs:label>
         <rdfs:label xml:lang="it">John Lennon</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q1203</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2881,8 +3212,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Anyone"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1994-03-01</birthDate>
+        <rdfs:comment xml:lang="en">Canadian singer (born 1994).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Cantante canadese (nato nel 1994).</rdfs:comment>
         <rdfs:label xml:lang="en">Justin Bieber</rdfs:label>
         <rdfs:label xml:lang="it">Justin Bieber</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q34086</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -2907,6 +3241,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GoDown"/>
+        <rdfs:comment xml:lang="en">First track on the album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_1</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2930,6 +3268,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DogEatDog"/>
+        <rdfs:comment xml:lang="en">Second track on the album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_2</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2953,6 +3295,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track on the album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_3</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2976,6 +3322,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BadBoyBoogie"/>
+        <rdfs:comment xml:lang="en">Fourth track on the album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_4</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2999,6 +3349,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Overdose"/>
+        <rdfs:comment xml:lang="en">Fifth track on the album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_5</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3022,6 +3376,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#CrabsodyInBlue"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_6</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3045,6 +3403,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HellAintABadPlaceToBe"/>
+        <rdfs:comment xml:lang="it">Settima traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seventh track on the album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_7</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_7</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3069,6 +3431,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WholeLottaRosie"/>
+        <rdfs:comment xml:lang="en">Eighth track of the album Go Down.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Ottava traccia dell&apos;album Go Down.</rdfs:comment>
+        <rdfs:label xml:lang="en">LTBR_8</rdfs:label>
+        <rdfs:label xml:lang="it">LTBR_8</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3080,8 +3446,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_4"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Let There Be Rock</rdfs:label>
         <rdfs:label xml:lang="it">Let There Be Rock</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q2603602</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3094,6 +3463,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_3"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-R_1"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">London Song</rdfs:label>
         <rdfs:label xml:lang="it">London Song</rdfs:label>
     </owl:NamedIndividual>
@@ -3107,6 +3478,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_4"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Lookin&apos; for Another Pure Love</rdfs:label>
         <rdfs:label xml:lang="it">Lookin&apos; for Another Pure Love</rdfs:label>
     </owl:NamedIndividual>
@@ -3125,8 +3498,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RhythmicGuitar"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1953-01-06</birthDate>
+        <rdfs:comment xml:lang="en">Australian guitarist.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Chitarrista australiano.</rdfs:comment>
         <rdfs:label xml:lang="en">Malcolm Young</rdfs:label>
         <rdfs:label xml:lang="it">Malcolm Young</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q44653</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3138,6 +3514,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BG1974_4"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">Masters Of War</rdfs:label>
         <rdfs:label xml:lang="it">Masters Of War</rdfs:label>
     </owl:NamedIndividual>
@@ -3150,6 +3528,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Maybe Your Baby</rdfs:label>
         <rdfs:label xml:lang="it">Maybe Your Baby</rdfs:label>
     </owl:NamedIndividual>
@@ -3162,6 +3542,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">My Big Sister</rdfs:label>
         <rdfs:label xml:lang="it">My Big Sister</rdfs:label>
     </owl:NamedIndividual>
@@ -3174,6 +3556,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">My Name</rdfs:label>
         <rdfs:label xml:lang="it">My Name</rdfs:label>
     </owl:NamedIndividual>
@@ -3185,8 +3569,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent on the Earth&apos;s northwestern quadrant, spanning from the Arctic Archipelago to the Panama Isthmus.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente nel quadrante nord-occidentale della Terra, che va dall&apos;arcipelago artico all&apos;istmo di Panama.</rdfs:comment>
         <rdfs:label xml:lang="it">Nord America</rdfs:label>
         <rdfs:label xml:lang="en">North America</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q49</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3196,6 +3583,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Oceania">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent of the Earth which has Australia as its mainland part.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente della Terra che ha come parte continentale l&apos;Australia.</rdfs:comment>
         <rdfs:label xml:lang="en">Oceania</rdfs:label>
         <rdfs:label xml:lang="it">Oceania</rdfs:label>
     </owl:NamedIndividual>
@@ -3208,6 +3597,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Old Brown Shoe</rdfs:label>
         <rdfs:label xml:lang="it">Old Brown Shoe</rdfs:label>
     </owl:NamedIndividual>
@@ -3219,8 +3610,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Organ">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#KeyboardInstrument"/>
+        <rdfs:comment xml:lang="en">Musical keyboard instrument.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale a tastiera.</rdfs:comment>
         <rdfs:label xml:lang="en">Organ</rdfs:label>
         <rdfs:label xml:lang="it">Organo</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q1444</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3232,6 +3626,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_5"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Overdose</rdfs:label>
         <rdfs:label xml:lang="it">Overdose</rdfs:label>
     </owl:NamedIndividual>
@@ -3245,6 +3641,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Folk"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BG1974_5"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BobDylan"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">Oxford Town</rdfs:label>
         <rdfs:label xml:lang="it">Oxford Town</rdfs:label>
     </owl:NamedIndividual>
@@ -3265,8 +3663,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ClassicGuitar"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1942-06-18</birthDate>
+        <rdfs:comment xml:lang="en">English musician, member of the Beatles (born 1942).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista inglese, membro dei Beatles (nato nel 1942).</rdfs:comment>
         <rdfs:label xml:lang="en">Paul McCartney</rdfs:label>
         <rdfs:label xml:lang="it">Paul McCartney</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q2599</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3283,8 +3684,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Drums"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1954-05-19</birthDate>
+        <rdfs:comment xml:lang="en">Australian drummer.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Batterista australiano.</rdfs:comment>
         <rdfs:label xml:lang="en">Phil Rudd</rdfs:label>
         <rdfs:label xml:lang="it">Phil Rudd</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q345400</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3295,8 +3699,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#KeyboardInstrument"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="en">Musical instrument.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale.</rdfs:comment>
         <rdfs:label xml:lang="en">Pianoforte</rdfs:label>
         <rdfs:label xml:lang="it">Pianoforte</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q5994</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3306,6 +3713,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Pianola">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#KeyboardInstrument"/>
+        <rdfs:comment xml:lang="en">Mechanical musical instrument, consisting of a piano with a system of perforated rollers which control the emission of sound.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale meccanico, costituito da un pianoforte con un sistema di rulli perforati che controllano l&apos;emissione del suono.</rdfs:comment>
         <rdfs:label xml:lang="en">Pianola</rdfs:label>
         <rdfs:label xml:lang="it">Pianola</rdfs:label>
     </owl:NamedIndividual>
@@ -3318,6 +3727,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Certification"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PlatinumCertification"/>
         <certifies rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TalkingBook"/>
+        <rdfs:comment xml:lang="en">Award given to albums that have had between 100,000 and 1,000,000 sales.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Premio dato agli album che hanno collezionato un numero di vendite compreso tra 100.000 e 1.000.000.</rdfs:comment>
         <rdfs:label xml:lang="it">Certificazione Platino</rdfs:label>
         <rdfs:label xml:lang="en">Platinum Certification</rdfs:label>
     </owl:NamedIndividual>
@@ -3336,8 +3747,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Superstition"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WildFlowers"/>
+        <rdfs:comment xml:lang="it">Genere musicale.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Genre of music.</rdfs:comment>
         <rdfs:label xml:lang="en">Pop</rdfs:label>
         <rdfs:label xml:lang="it">Pop</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q37073</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3349,6 +3763,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BadBoyBoogie"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">First performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_1</rdfs:label>
+        <rdfs:label xml:lang="it">RP_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3360,6 +3778,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BeatingAroundTheBush"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">Second performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_2</rdfs:label>
+        <rdfs:label xml:lang="it">RP_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3371,6 +3793,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GoDown"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Terza performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_3</rdfs:label>
+        <rdfs:label xml:lang="it">RP_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3382,6 +3808,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LetThereBeRock"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">Fourth performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_4</rdfs:label>
+        <rdfs:label xml:lang="it">RP_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3393,6 +3823,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Overdose"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">Fifth performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_5</rdfs:label>
+        <rdfs:label xml:lang="it">RP_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3404,6 +3838,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ShotDownInFlames"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Sesta performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_6</rdfs:label>
+        <rdfs:label xml:lang="it">RP_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3415,6 +3853,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TouchTooMuch"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Settima performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seventh performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_7</rdfs:label>
+        <rdfs:label xml:lang="it">RP_7</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3426,6 +3868,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WalkAllOverYou"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">Eigth performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Ottava performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_8</rdfs:label>
+        <rdfs:label xml:lang="it">RP_8</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3437,6 +3883,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WholeLottaRosie"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="en">Ninth performance of the RiverPlate 2009 event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Nona performance dell&apos;evento RiverPlate 2009.</rdfs:comment>
+        <rdfs:label xml:lang="en">RP_9</rdfs:label>
+        <rdfs:label xml:lang="it">RP_9</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3447,6 +3897,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Rain</rdfs:label>
         <rdfs:label xml:lang="it">Rain</rdfs:label>
     </owl:NamedIndividual>
@@ -3478,8 +3930,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hostOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-Ray1995"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1944-06-21</birthDate>
+        <rdfs:comment xml:lang="en">British singer and musician.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Cantante e musicista britannico.</rdfs:comment>
         <rdfs:label xml:lang="en">Ray Davies</rdfs:label>
         <rdfs:label xml:lang="it">Ray Davies</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q357455</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3490,6 +3945,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MalcolmYoung"/>
+        <rdfs:comment xml:lang="it">Chitarra utilizzata principalmente per suonare gli accordi ritmici in una canzone.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Guitar mainly used for playing the rhythmic chords in a song.</rdfs:comment>
         <rdfs:label xml:lang="it">Chitarra Ritmica</rdfs:label>
         <rdfs:label xml:lang="en">Rhythmic Guitar</rdfs:label>
     </owl:NamedIndividual>
@@ -3508,8 +3965,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <componentOf rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Drums"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1940-07-07</birthDate>
+        <rdfs:comment xml:lang="en">British musician, drummer for the Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista britannico, batterista dei Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Ringo Starr</rdfs:label>
         <rdfs:label xml:lang="it">Ringo Starr</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q2632</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3520,6 +3980,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <hasEventPlaced rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RiverPlate2009"/>
         <locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BuenosAires"/>
+        <rdfs:comment xml:lang="en">Football stadium, occasionally used to host concerts.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Stadio di calcio, occasionalmente usato per ospitare concerti.</rdfs:comment>
         <rdfs:label xml:lang="en">River Plate</rdfs:label>
         <rdfs:label xml:lang="it">River Plate</rdfs:label>
     </owl:NamedIndividual>
@@ -3548,6 +4010,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-01</eventStartDate>
         <eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concert</eventType>
         <manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/en/6/6a/ACDC_Live_at_River_Plate.jpg</manifest>
+        <rdfs:comment xml:lang="en">AC/DC concert held at the River Plate Stadium, 2009.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Concerto degli AC/DC tenuto allo stadio River Plate, nel 2009.</rdfs:comment>
         <rdfs:label xml:lang="en">RiverPlate2009</rdfs:label>
         <rdfs:label xml:lang="it">RiverPlate2009</rdfs:label>
     </owl:NamedIndividual>
@@ -3580,8 +4044,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WalkAllOverYou"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WholeLottaRosie"/>
         <genreOfSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#20thCenturyMan"/>
+        <rdfs:comment xml:lang="it">Genere della popular music sviluppatosi negli Stati Uniti e nel Regno Unito nel corso degli anni cinquanta e sessanta del XX secolo.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Genre of popular music that developed in the United States and the United Kingdom during the fifties and sixties of the twentieth century.</rdfs:comment>
         <rdfs:label xml:lang="en">Rock</rdfs:label>
         <rdfs:label xml:lang="it">Rock</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q11399</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3594,8 +4061,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasLocation rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HardingTheater"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#USA"/>
+        <rdfs:comment xml:lang="it">Città e contea consolidate in California, Stati Uniti.</rdfs:comment>
+        <rdfs:comment>Consolidated city and county in California, United States.</rdfs:comment>
         <rdfs:label xml:lang="en">San Francisco</rdfs:label>
         <rdfs:label xml:lang="it">San Francisco</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q62</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3605,8 +4075,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Saxophone">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
+        <rdfs:comment xml:lang="en">Single-reed woodwind instrument.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento a fiato ad ancia singola.</rdfs:comment>
         <rdfs:label xml:lang="it">Sassofono</rdfs:label>
         <rdfs:label xml:lang="en">Saxophone</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q9798</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3618,6 +4091,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_6"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Shot Down In Flames</rdfs:label>
         <rdfs:label xml:lang="it">Shot Down In Flames</rdfs:label>
     </owl:NamedIndividual>
@@ -3632,8 +4107,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasLocation rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WorthyFarm"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#England"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Europe"/>
+        <rdfs:comment xml:lang="it">Contea storica dell&apos;Inghilterra.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Historic county of England.</rdfs:comment>
         <rdfs:label xml:lang="en">Somerset</rdfs:label>
         <rdfs:label xml:lang="it">Somerset</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q67461071</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3643,8 +4121,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#SouthAmerica">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Continent"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
+        <rdfs:comment xml:lang="en">Continent, mainly on the Earth&apos;s southwestern quadrant.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Continente, principalmente sul quadrante sud-occidentale della Terra.</rdfs:comment>
         <rdfs:label xml:lang="en">South America</rdfs:label>
         <rdfs:label xml:lang="it">Sud America</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q18</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3674,8 +4155,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pianoforte"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Voice"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1950-05-13</birthDate>
+        <rdfs:comment xml:lang="en">American musician (born 1950).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Musicista americano (nato nel 1950).</rdfs:comment>
         <rdfs:label xml:lang="en">Stevie Wonder</rdfs:label>
         <rdfs:label xml:lang="it">Stevie Wonder</rdfs:label>
+        <rdfs:seeAlso>https://musicbrainz.org/artist/1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3687,6 +4171,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_5"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Superstition</rdfs:label>
         <rdfs:label xml:lang="it">Superstition</rdfs:label>
     </owl:NamedIndividual>
@@ -3712,6 +4198,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Superstition"/>
+        <rdfs:comment xml:lang="en">First track on the Talking Book album.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_1</rdfs:label>
+        <rdfs:label xml:lang="it">TB_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3734,6 +4224,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BigBrother"/>
+        <rdfs:comment xml:lang="en">Second track on the Talking Book album.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_2</rdfs:label>
+        <rdfs:label xml:lang="it">TB_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3756,6 +4250,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlameItOnTheSun"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track on the Talking Book album.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_3</rdfs:label>
+        <rdfs:label xml:lang="it">TB_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3778,6 +4276,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LookinForAnotherPureLove"/>
+        <rdfs:comment xml:lang="en">Fourth track on the Talking Book album.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_4</rdfs:label>
+        <rdfs:label xml:lang="it">TB_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3800,6 +4302,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#IBelieve"/>
+        <rdfs:comment xml:lang="en">Fifth track on the Talking Book album.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_5</rdfs:label>
+        <rdfs:label xml:lang="it">TB_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3822,6 +4328,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#YouAreTheSunshineOfMyLife"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the Talking Book album.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_6</rdfs:label>
+        <rdfs:label xml:lang="it">TB_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3845,6 +4355,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MaybeYourBaby"/>
+        <rdfs:comment xml:lang="it">Settima traccia dell&apos;album Talking Book.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seventh track on the Talking Book album.</rdfs:comment>
+        <rdfs:label xml:lang="en">TB_7</rdfs:label>
+        <rdfs:label xml:lang="it">TB_7</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3867,6 +4381,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GirlFromTheNorthCountry"/>
+        <rdfs:comment xml:lang="en">First track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_1</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3888,6 +4406,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#BlowinInTheWind"/>
+        <rdfs:comment xml:lang="en">Second track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_2</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3909,6 +4431,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MastersOfWar"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_3</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3930,6 +4456,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#DownTheHighway"/>
+        <rdfs:comment xml:lang="en">Fourth track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_4</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3951,6 +4481,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#OxfordTown"/>
+        <rdfs:comment xml:lang="en">Fifth track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_5</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3973,6 +4507,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#IShallBeFree"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the album The Freewheelin&apos; Bob Dylan.</rdfs:comment>
+        <rdfs:label xml:lang="en">TFBD_6</rdfs:label>
+        <rdfs:label xml:lang="it">TFBD_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3995,6 +4533,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LondonSong"/>
+        <rdfs:comment xml:lang="en">First track on the album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_1</rdfs:label>
+        <rdfs:label xml:lang="it">TS_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4016,6 +4558,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting"/>
+        <rdfs:comment xml:lang="en">Second track on the album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_2</rdfs:label>
+        <rdfs:label xml:lang="it">TS_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4037,6 +4583,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Victoria"/>
+        <rdfs:comment xml:lang="it">Terza traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third track on the album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_3</rdfs:label>
+        <rdfs:label xml:lang="it">TS_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4058,6 +4608,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MyName"/>
+        <rdfs:comment xml:lang="en">Fourth track on the album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quarta traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_4</rdfs:label>
+        <rdfs:label xml:lang="it">TS_4</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4079,6 +4633,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
         <sequence:precedes rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#20thCenturyMan"/>
+        <rdfs:comment xml:lang="en">Fifth track on the album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Quinta traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_5</rdfs:label>
+        <rdfs:label xml:lang="it">TS_5</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4101,6 +4659,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
         <sequence:follows rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <containsSong rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#MyBigSister"/>
+        <rdfs:comment xml:lang="it">Sesta traccia dell&apos;album The Storyteller.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sixth track on the album The Storyteller.</rdfs:comment>
+        <rdfs:label xml:lang="en">TS_6</rdfs:label>
+        <rdfs:label xml:lang="it">TS_6</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4114,6 +4676,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_7"/>
@@ -4123,11 +4690,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Platinum_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1972-10-27</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">150000</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_5"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TB_6"/>
+        <rdfs:comment xml:lang="it">Album musicale appartenente a Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music album belonging to Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">Talking Book</rdfs:label>
         <rdfs:label xml:lang="it">Talking Book</rdfs:label>
     </owl:NamedIndividual>
@@ -4140,6 +4704,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Beatles"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">The Ballad of John and Yoko</rdfs:label>
         <rdfs:label xml:lang="it">The Ballad of John and Yoko</rdfs:label>
     </owl:NamedIndividual>
@@ -4155,6 +4721,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_6"/>
@@ -4164,10 +4734,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Diamond_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1963-05-27</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1100000</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TFBD_5"/>
+        <rdfs:comment xml:lang="it">Album musicale appartenente a Bob Dylan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music album belonging to Bob Dylan.</rdfs:comment>
         <rdfs:label xml:lang="en">The Freewheelin&apos; Bob Dylan</rdfs:label>
         <rdfs:label xml:lang="it">The Freewheelin&apos; Bob Dylan</rdfs:label>
     </owl:NamedIndividual>
@@ -4183,6 +4751,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_6"/>
@@ -4192,10 +4764,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Gold_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1998-04-21</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">70000</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TS_5"/>
+        <rdfs:comment xml:lang="it">Album musicale appartenente a Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music album belonging to Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">The Storyteller</rdfs:label>
         <rdfs:label xml:lang="it">The Storyteller</rdfs:label>
     </owl:NamedIndividual>
@@ -4210,6 +4780,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_6"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-R_2"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">Tired of Waiting</rdfs:label>
         <rdfs:label xml:lang="it">Tired of Waiting</rdfs:label>
     </owl:NamedIndividual>
@@ -4227,8 +4799,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasWritten rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WildFlowers"/>
         <plays rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ElectricGuitar"/>
         <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1950-10-20</birthDate>
+        <rdfs:comment xml:lang="en">American singer and guitarist (1950–2017).</rdfs:comment>
+        <rdfs:comment xml:lang="it">Cantante e chitarrista americano (1950–2017).</rdfs:comment>
         <rdfs:label xml:lang="en">Tom Petty</rdfs:label>
         <rdfs:label xml:lang="it">Tom Petty</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q311655</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -4240,6 +4815,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_7"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Touch Too Much</rdfs:label>
         <rdfs:label xml:lang="it">Touch Too Much</rdfs:label>
     </owl:NamedIndividual>
@@ -4251,8 +4828,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Trombone">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#WindInstrument"/>
+        <rdfs:comment xml:lang="en">Brass musical instrument with a slide.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale in ottone con scivolo.</rdfs:comment>
         <rdfs:label xml:lang="en">Trombone</rdfs:label>
         <rdfs:label xml:lang="it">Trombone</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q8350</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -4263,8 +4843,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Nation"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Place"/>
         <positionedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#NorthAmerica"/>
+        <rdfs:comment xml:lang="en">Country in North America.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Paese del Nord America.</rdfs:comment>
         <rdfs:label xml:lang="it">Stati Uniti d&apos;America</rdfs:label>
         <rdfs:label xml:lang="en">USA</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q30</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -4277,6 +4860,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GL2010_7"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-R_3"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">Victoria</rdfs:label>
         <rdfs:label xml:lang="it">Victoria</rdfs:label>
     </owl:NamedIndividual>
@@ -4288,6 +4873,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Violin">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <rdfs:comment xml:lang="en">Bowed musical instrument, consisting of a wooden sound box, four strings and a bridge that lifts the strings above the sound board.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale ad arco, costituito da una cassa armonica in legno, quattro corde e un ponticello che solleva le corde sopra la tavola armonica.</rdfs:comment>
         <rdfs:label xml:lang="en">Violin</rdfs:label>
         <rdfs:label xml:lang="it">Violino</rdfs:label>
     </owl:NamedIndividual>
@@ -4299,6 +4886,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lorenzo/ontologies/music#Violoncello">
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Instrument"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StringedInstrument"/>
+        <rdfs:comment xml:lang="en">Bowed musical instrument, consisting of an elongated sound box with four strings tuned in fifths.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Strumento musicale ad arco, costituito da una cassa armonica allungata con quattro corde accordate in quinte.</rdfs:comment>
         <rdfs:label xml:lang="en">Violoncello</rdfs:label>
         <rdfs:label xml:lang="it">Violoncello</rdfs:label>
     </owl:NamedIndividual>
@@ -4319,6 +4908,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#PaulMcCartney"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
         <playedBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Considerata uno strumento musicale naturale e universale, utilizzato in quasi tutte le culture del mondo. Può produrre una vasta gamma di suoni e tonalità, dal canto melodioso alla parlata ritmica.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Considered a natural and universal musical instrument, used in almost all cultures of the world. It can produce a wide range of sounds and tones, from melodious singing to rhythmic speech.</rdfs:comment>
         <rdfs:label xml:lang="it">Voce</rdfs:label>
         <rdfs:label xml:lang="en">Voice</rdfs:label>
     </owl:NamedIndividual>
@@ -4332,6 +4923,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_8"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Walk All Over You</rdfs:label>
         <rdfs:label xml:lang="it">Walk All Over You</rdfs:label>
     </owl:NamedIndividual>
@@ -4345,6 +4938,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <performedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RP_9"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#ACDC"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dagli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Whole Lotta Rosie</rdfs:label>
         <rdfs:label xml:lang="it">Whole Lotta Rosie</rdfs:label>
     </owl:NamedIndividual>
@@ -4357,6 +4952,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Pop"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TomPetty"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Tom Petty.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Tom Petty.</rdfs:comment>
         <rdfs:label xml:lang="en">Wild Flowers</rdfs:label>
         <rdfs:label xml:lang="it">Wild Flowers</rdfs:label>
     </owl:NamedIndividual>
@@ -4369,6 +4966,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#EventLocation"/>
         <hasEventPlaced rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#GlastonburyFestival2010"/>
         <locatedIn rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Somerset"/>
+        <rdfs:comment xml:lang="en">Farm located in Pilton, Somerset, England. It has become world famous as the venue for the annual Glastonbury music festival.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Fattoria situata a Pilton, nel Somerset, Inghilterra. È diventata famosa in tutto il mondo come sede del festival musicale annuale Glastonbury.</rdfs:comment>
         <rdfs:label xml:lang="en">Worthy Farm</rdfs:label>
         <rdfs:label xml:lang="it">Worthy Farm</rdfs:label>
     </owl:NamedIndividual>
@@ -4382,6 +4981,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-Ray1995"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LondonSong"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="en">First performance of the 1995 X-Ray event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Prima performance dell&apos;evento X-Ray 1995.</rdfs:comment>
+        <rdfs:label xml:lang="en">X-R_1</rdfs:label>
+        <rdfs:label xml:lang="it">X-R_1</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4393,6 +4996,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-Ray1995"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#TiredOfWaiting"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="en">Second performance of the 1995 X-Ray event.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Seconda performance dell&apos;evento X-Ray 1995.</rdfs:comment>
+        <rdfs:label xml:lang="en">X-R_2</rdfs:label>
+        <rdfs:label xml:lang="it">X-R_2</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4404,6 +5011,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <belongsToEvent rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#X-Ray1995"/>
         <hasSongPerformed rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Victoria"/>
         <performanceBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Terza performance dell&apos;evento X-Ray 1995.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Third performance of the 1995 X-Ray event.</rdfs:comment>
+        <rdfs:label xml:lang="en">X-R_3</rdfs:label>
+        <rdfs:label xml:lang="it">X-R_3</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4425,6 +5036,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <eventStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1995-10-12</eventStartDate>
         <eventType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concert</eventType>
         <manifest rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://wehco.media.clients.ellingtoncms.com/img/photos/2015/01/02/resized_99265-ray-davies-the-kinks_22-19174_t800.JPG?90232451fbcadccc64a17de7521d859a8f88077d</manifest>
+        <rdfs:comment xml:lang="it">Evento musicale tenuto all&apos;Hardin Theather nel 1995.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music event held at the Hardin Theather in 1995.</rdfs:comment>
         <rdfs:label xml:lang="en">X-Ray1995</rdfs:label>
         <rdfs:label xml:lang="it">X-Ray1995</rdfs:label>
     </owl:NamedIndividual>
@@ -4437,6 +5050,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Jazz"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#StevieWonder"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto da Stevie Wonder.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by Stevie Wonder.</rdfs:comment>
         <rdfs:label xml:lang="en">You Are the Sunshine of My Life</rdfs:label>
         <rdfs:label xml:lang="it">You Are the Sunshine of My Life</rdfs:label>
     </owl:NamedIndividual>
@@ -4449,6 +5064,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Song"/>
         <hasGenre rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Rock"/>
         <writtenBy rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#RayDavies"/>
+        <rdfs:comment xml:lang="it">Brano musicale scritto dal cantautore britannico Ray Davies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Song written by British singer-songwriter Ray Davies.</rdfs:comment>
         <rdfs:label xml:lang="en">20th Century Man</rdfs:label>
         <rdfs:label xml:lang="it">20th Century Man</rdfs:label>
     </owl:NamedIndividual>
@@ -4464,6 +5081,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_6"/>
@@ -4473,10 +5094,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Diamond_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1970-02-26</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8000000</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HJ_5"/>
+        <rdfs:comment xml:lang="it">Album musicale appartenente ai Beatles.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music album belonging to the Beatles.</rdfs:comment>
         <rdfs:label xml:lang="en">Hey Jude!</rdfs:label>
         <rdfs:label xml:lang="it">Hey Jude!</rdfs:label>
     </owl:NamedIndividual>
@@ -4492,6 +5111,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_6"/>
@@ -4501,10 +5124,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Diamond_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1979-07-29</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9396928</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#HTH_5"/>
+        <rdfs:comment xml:lang="it">Album musicale appartenente agli AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Music album belonging to the AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Highway to Hell!</rdfs:label>
         <rdfs:label xml:lang="it">Highway to Hell!</rdfs:label>
     </owl:NamedIndividual>
@@ -4520,6 +5141,12 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Album"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_1"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_8"/>
@@ -4529,14 +5156,11 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <hasCertification rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#Diamond_Certification"/>
         <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1977-03-21</releaseDate>
         <salesCount rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3119941</salesCount>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_2"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_3"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_4"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_5"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_6"/>
-        <bag:hasItem rdf:resource="http://www.semanticweb.org/lorenzo/ontologies/music#LTBR_7"/>
+        <rdfs:comment xml:lang="en">1977 studio album by AC/DC.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Album degli AC/DC.</rdfs:comment>
         <rdfs:label xml:lang="en">Let There Be Rock!</rdfs:label>
         <rdfs:label xml:lang="it">Let There Be Rock!</rdfs:label>
+        <rdfs:seeAlso>https://www.wikidata.org/wiki/Q832786</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -4549,10 +5173,6 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item</rdfs:label>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has item - The link to every item of the Bag</rdfs:comment>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest">
         <rdfs:comment>This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task.</rdfs:comment>
     </rdf:Description>
