@@ -2,18 +2,18 @@
 Music ontology focused on musical events modeling.
 
 ## Class Relationships
-<img src="doc/class-relationships.svg" width="60%"/>
+<img src="docs/class-relationships.svg" width="60%"/>
 
 ## Class Graphs
-<img src="doc/event-graph.png" width="50%"/>
-<img src="doc/musician-graph.png" width="50%"/>
-<img src="doc/band-graph.png" width="50%"/>
-<img src="doc/album-graph.png" width="50%"/>
-<img src="doc/certification-graph.png" width="50%"/>
-<img src="doc/genre-graph.png" width="50%"/>
-<img src="doc/song-graph.png" width="50%"/>
-<img src="doc/place-graph.png" width="50%"/>
-<img src="doc/instrument-graph.png" width="50%"/>
+<img src="docs/event-graph.png" width="50%"/>
+<img src="docs/musician-graph.png" width="50%"/>
+<img src="docs/band-graph.png" width="50%"/>
+<img src="docs/album-graph.png" width="50%"/>
+<img src="docs/certification-graph.png" width="50%"/>
+<img src="docs/genre-graph.png" width="50%"/>
+<img src="docs/song-graph.png" width="50%"/>
+<img src="docs/place-graph.png" width="50%"/>
+<img src="docs/instrument-graph.png" width="50%"/>
 
 ## Streamlit Web Client
 The web client implements an interaction flow useful for consulting the ontology.
@@ -40,4 +40,4 @@ ORDER BY ?PerformanceItem
 ```
 
 ### User Interface
-<img src="doc/events-ui.png" width="70%"/>
+<img src="docs/events-ui.png" width="70%"/>
