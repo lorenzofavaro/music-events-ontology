@@ -38,6 +38,3 @@ WHERE {{
 }} 
 ORDER BY ?PerformanceItem
 ```
-
-### User Interface
-<img src="docs/events-ui.png" width="70%"/>
